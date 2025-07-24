@@ -30,6 +30,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98193ebe049082d4c95afde5be1af044
+    m_Address: Launcher Input Generic TopDown
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: efa613518dd0adf4fbee9f07c9a34fd9
     m_Address: VirtualJoystick View UI
     m_ReadOnly: 0
