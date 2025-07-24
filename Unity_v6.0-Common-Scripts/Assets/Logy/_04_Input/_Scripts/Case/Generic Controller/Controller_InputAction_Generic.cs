@@ -29,7 +29,7 @@ namespace Logy.Unity_Common_v01
         {
             await base.Initialize_Detail_With_UniTask(_cancellationToken);
 
-            Variable_Get_Reference();
+            Variable_Initialize();
 
             _start_touch_vector2 = Vector2.zero;
 
@@ -47,9 +47,10 @@ namespace Logy.Unity_Common_v01
             Add_move_inputAction_Listener();
         }
 
-        private void Variable_Get_Reference()
+        private void Variable_Initialize()
         {
             _touchPress_inputAction = _inputActionAsset.FindAction("Player/TouchPress");
+            _touchPress_inputAction.Enable();
         }
 
         private void Update_Touch_Action()

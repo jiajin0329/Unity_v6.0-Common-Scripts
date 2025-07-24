@@ -63,6 +63,7 @@ namespace Logy.Unity_Common_v01
         {
             _inputActionAsset.FindActionMap("UI").Disable();
             _move_inputAction = _inputActionAsset.FindAction("Player/Move");
+            _move_inputAction.Enable();
         }
 
         private void Update_Input_Action()

@@ -8,7 +8,6 @@ namespace Logy.Unity_Common_v01
     {
         public static Transform launcher_transform;
         public CancellationTokenSource cancellationTokenSource { get; private set; }
-        
 
         [SerializeField] private Game_Data _game_data;
         protected abstract Core _core { get; }
@@ -29,6 +28,8 @@ namespace Logy.Unity_Common_v01
         private async void Awake()
         {
             cancellationTokenSource = new();
+
+            _game_data.Initialize();
 
             if (this is IHas_Initialize) Initialize();
 
