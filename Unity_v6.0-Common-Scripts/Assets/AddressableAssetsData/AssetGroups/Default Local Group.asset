@@ -20,6 +20,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5536a191df3e3b04aa33d0c6c5bee9f6
+    m_Address: InputSystem Actions
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: efa613518dd0adf4fbee9f07c9a34fd9
+    m_Address: VirtualJoystick View UI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5ed2fff19af8b2f49a04c4385a88d1cf, type: 2}
   m_SchemaSet:

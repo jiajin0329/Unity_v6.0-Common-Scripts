@@ -13,7 +13,6 @@ namespace Logy.Unity_Common_v01
         public event UnityAction Update_Action;
         private bool updating;
         public int delay_ms = 16;
-        
 
         public Updater(string _owner_name, CancellationToken _cancellationToken) : base($"{_owner_name} {nameof(Updater)}")
         {
