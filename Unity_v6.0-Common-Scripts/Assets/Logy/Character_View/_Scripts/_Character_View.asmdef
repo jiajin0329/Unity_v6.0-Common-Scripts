@@ -1,0 +1,19 @@
+{
+    "name": "Character_View",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e01cc4d5b7c08d94bbe084b4d4266e73",
+        "GUID:f196a334d748c5948a6fcd8b28d32587",
+        "GUID:14df030bac5652f49a758b01aca3ca66",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
