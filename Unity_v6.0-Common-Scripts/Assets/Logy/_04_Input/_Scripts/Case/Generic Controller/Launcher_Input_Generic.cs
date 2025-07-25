@@ -22,9 +22,7 @@ namespace Logy.Unity_Common_v01
 
         public override async UniTask Reset(CancellationToken _cancellationToken)
         {
-            await _player_input.model.controller_inputAction_generic.Variable_Null_Handle(_cancellationToken);
-            await _player_input.model.virtualJoystick_view.Variable_Null_Handle(_cancellationToken);
-            await _player_input.variable_viewer.Variable_Null_Handle(_cancellationToken);
+            await _player_input.Reset(_cancellationToken);
         }
 
         protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)

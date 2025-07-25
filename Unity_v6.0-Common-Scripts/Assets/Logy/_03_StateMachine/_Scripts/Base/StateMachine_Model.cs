@@ -45,6 +45,11 @@ namespace Logy.Unity_Common_v01
         {
             if (_states is null) return;
 
+            Update_current_state_name();
+        }
+
+        private void Update_current_state_name()
+        {
             current_state_name = _states[current_state_index].name;
         }
         
@@ -83,7 +88,9 @@ namespace Logy.Unity_Common_v01
 
             //start next state
             Set_current_state_index(_index);
-            current_state_name = states[current_state_index].name;
+#if UNITY_EDITOR
+            Update_current_state_name();
+#endif
 
             _states[current_state_index].Start();
         }

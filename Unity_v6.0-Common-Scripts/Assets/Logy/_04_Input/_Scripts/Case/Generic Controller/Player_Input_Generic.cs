@@ -15,15 +15,26 @@ namespace Logy.Unity_Common_v01
 #endif
         public Player_Input_Generic() : base(nameof(Player_Input_Generic)) {}
 
+        public async UniTask Reset(CancellationToken _cancellationToken)
+        {
+            await model.controller_inputAction_generic.Variable_Null_Handle(_cancellationToken);
+            await model.virtualJoystick_view.Variable_Null_Handle(_cancellationToken);
+
+#if DEBUG
+            await variable_viewer.Variable_Null_Handle(_cancellationToken);
+#endif
+        }
+
         protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
         {
             presenter.Set_Reference(model);
-            variable_viewer.Set_Reference(model);
 
             await model.Initialize_With_UniTask(_cancellationToken);
 
             presenter.Initialize();
+
 #if DEBUG
+            variable_viewer.Set_Reference(model);
             await variable_viewer.Initialize_With_UniTask(_cancellationToken);
 #endif
         }
