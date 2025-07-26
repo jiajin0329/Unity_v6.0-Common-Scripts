@@ -99,7 +99,7 @@ MonoBehaviour:
       <variable_viewer>k__BackingField:
         <process_state>k__BackingField: 0
         _variable_text: {fileID: 5413429398007660917}
-    _player_view_topDown:
+    _player_view:
       <process_state>k__BackingField: 0
       _prefab: {fileID: 9103964399267910336, guid: 400f3501d896ad249bcb6ae16920d251, type: 3}
 --- !u!1 &5319500571916398917

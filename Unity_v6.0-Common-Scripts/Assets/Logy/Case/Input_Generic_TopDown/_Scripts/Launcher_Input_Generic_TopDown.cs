@@ -18,7 +18,7 @@ namespace Logy.Unity_Common_v01
     {
         [SerializeField] private Player_Input_Generic _player_input;
         [SerializeField] private Plyaer_StateMachine_TopDown _plyaer_stateMachine;
-        [SerializeField] private Player_View_TopDown _player_view_topDown;
+        [SerializeField] private Player_View_TopDown _player_view;
 
         public Core_Input_Generic_TopDown() : base(nameof(Core_Input_Generic_TopDown)) { }
 
@@ -26,7 +26,7 @@ namespace Logy.Unity_Common_v01
         {
             await _player_input.Reset(_cancellationToken);
             await _plyaer_stateMachine.Reset(_cancellationToken);
-            await _player_view_topDown.Variable_Null_Handle(_cancellationToken);
+            await _player_view.Variable_Null_Handle(_cancellationToken);
         }
 
         protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
@@ -52,8 +52,8 @@ namespace Logy.Unity_Common_v01
                 stateMachine_model = _plyaer_stateMachine.stateMachine,
             };
 
-            _player_view_topDown.Set_Reference(_data);
-            await _player_view_topDown.Initialize_With_UniTask(_cancellationToken);
+            _player_view.Set_Reference(_data);
+            await _player_view.Initialize_With_UniTask(_cancellationToken);
         }
 
         protected override void Begin_Detail()
