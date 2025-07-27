@@ -1,3 +1,4 @@
+#if UNITY_WEBGL
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Logy.Unity_Common_v01
     {
         [SerializeField] Core_Input_Generic_TopDown _core_input_generic_topDown;
         protected override Core _core => _core_input_generic_topDown;
-        
+
         public Launcher_Input_Generic_TopDown() : base(nameof(Launcher_Input_Generic_TopDown)) {}
     }
 
@@ -20,7 +21,7 @@ namespace Logy.Unity_Common_v01
         [SerializeField] private Player_StateMachine_TopDown _player_stateMachine;
         [SerializeField] private Player_View_TopDown _player_view;
 
-        public Core_Input_Generic_TopDown() : base(nameof(Core_Input_Generic_TopDown)) { }
+        public Core_Input_Generic_TopDown() : base(nameof(Core_Input_Generic_TopDown)) {}
 
         public override async UniTask Reset(CancellationToken _cancellationToken)
         {
@@ -70,3 +71,4 @@ namespace Logy.Unity_Common_v01
         }
     }
 }
+#endif

@@ -1,4 +1,4 @@
-#if DEBUG
+#if UNITY_WEBGL && DEBUG
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
