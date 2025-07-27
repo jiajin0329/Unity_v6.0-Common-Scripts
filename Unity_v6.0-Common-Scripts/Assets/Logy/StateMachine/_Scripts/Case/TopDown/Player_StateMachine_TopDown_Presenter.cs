@@ -3,7 +3,7 @@ using System;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Plyaer_StateMachine_TopDown_Presenter : Process
+    public class Player_StateMachine_TopDown_Presenter : Process
     {
         private Data _data;
         public struct Data
@@ -12,7 +12,7 @@ namespace Logy.Unity_Common_v01
             public Input_Model input_model;
         }
 
-        public Plyaer_StateMachine_TopDown_Presenter() : base(nameof(Plyaer_StateMachine_TopDown_Presenter)) {}
+        public Player_StateMachine_TopDown_Presenter() : base(nameof(Player_StateMachine_TopDown_Presenter)) {}
 
         public void Set_Reference(Data _data) { this._data = _data; }
         

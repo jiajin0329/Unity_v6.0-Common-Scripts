@@ -87,7 +87,7 @@ MonoBehaviour:
       <variable_viewer>k__BackingField:
         <process_state>k__BackingField: 0
         _variable_text: {fileID: 5413429398007660917}
-    _plyaer_stateMachine:
+    _player_stateMachine:
       <process_state>k__BackingField: 0
       <stateMachine>k__BackingField:
         <process_state>k__BackingField: 0
