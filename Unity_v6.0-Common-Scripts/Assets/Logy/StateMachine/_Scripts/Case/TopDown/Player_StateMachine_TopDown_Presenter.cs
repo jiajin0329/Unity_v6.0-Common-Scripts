@@ -3,7 +3,7 @@ using System;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Player_StateMachine_TopDown_Presenter : Process
+    public class Player_StateMachine_TopDown_Presenter
     {
         private Data _data;
         public struct Data
@@ -12,11 +12,9 @@ namespace Logy.Unity_Common_v01
             public Input_Model input_model;
         }
 
-        public Player_StateMachine_TopDown_Presenter() : base(nameof(Player_StateMachine_TopDown_Presenter)) {}
-
         public void Set_Reference(Data _data) { this._data = _data; }
         
-        protected override void Initialize_Detail()
+        public void Initialize()
         {
             _data.input_model.Get_input_distance_Action += Player_State_TopDown.Set_input_distance;
             _data.input_model.Get_input_radian_Action += Player_State_TopDown.Set_input_radian;

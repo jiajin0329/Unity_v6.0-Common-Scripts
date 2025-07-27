@@ -3,7 +3,7 @@ using System;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Player_View_TopDown_Presenter : Process
+    public class Player_View_TopDown_Presenter
     {
         private Data _data;
         public struct Data
@@ -13,11 +13,9 @@ namespace Logy.Unity_Common_v01
             public IStateMachine_Model_TopDown stateMachine_model;
         }
 
-        public Player_View_TopDown_Presenter() : base(nameof(Player_View_TopDown_Presenter)) {}
-
         public void Set_Reference(Data _data) { this._data = _data; }
 
-        protected override void Initialize_Detail()
+        public void Initialize()
         {
             Add_Character_View_Action(_data.player_view_topDown);
 

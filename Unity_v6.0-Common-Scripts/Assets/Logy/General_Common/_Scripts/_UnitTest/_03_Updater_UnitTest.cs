@@ -14,8 +14,8 @@ namespace Logy.Unity_Common_v01
         {
             _cancellationTokenSource = new();
             _updater = new(_owner_name, _cancellationTokenSource.Token);
-            
-            Process.Check_Initialize(_updater);
+
+            _updater.Initialize();
         }
 
         public static void Check_Variable()

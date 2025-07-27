@@ -10,7 +10,7 @@ namespace Logy.Unity_Common_v01
         {
             Build_Object();
 
-            Process.Check_Initialize(_presenter);
+            _presenter.Initialize();
         }
 
         private static void Build_Object()

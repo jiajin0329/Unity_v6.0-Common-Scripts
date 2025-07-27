@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using NUnit.Framework;
 
@@ -10,13 +11,16 @@ namespace Logy.Unity_Common_v01
 
         public static async UniTask Check_Initialize()
         {
-            _controller_inputAction = new(nameof(Controller_InputAction));
-            await Process.Check_Initialize_With_UniTask(_controller_inputAction);
+            _controller_inputAction = new();
+
+            CancellationTokenSource _cancellationTokenSource = new();
+            await _controller_inputAction.Initialize_With_UniTask(_cancellationTokenSource.Token);
+            _cancellationTokenSource.Cancel();
         }
 
         public static void Check_Begin()
         {
-            Process.Check_Begin(_controller_inputAction);
+            _controller_inputAction.Begin();
         }
 
         public static void Check_Variable()

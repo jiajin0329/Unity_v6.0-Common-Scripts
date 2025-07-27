@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Controller_InputAction : Process, IHas_Begin
+    public class Controller_InputAction
     {
         [SerializeField] protected InputActionAsset _inputActionAsset;
         protected InputAction _move_inputAction;
@@ -29,9 +29,7 @@ namespace Logy.Unity_Common_v01
         public bool is_inputActionAsset_notNull => _inputActionAsset != null;
         public bool is_move_inputAction_notNull => _move_inputAction != null;
 
-        public Controller_InputAction(string _name) : base(_name) {}
-
-        protected async override UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
+        public virtual async UniTask Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
             await Variable_Null_Handle(_cancellationToken);
 
@@ -77,7 +75,7 @@ namespace Logy.Unity_Common_v01
             _move_inputAction.canceled += OnInputUp;
         }
 
-        protected override void Begin_Detail()
+        public virtual void Begin()
         {
             Get_input_type_Action?.Invoke(input_type);
             Get_input_vector2_Action?.Invoke(Vector2.zero);

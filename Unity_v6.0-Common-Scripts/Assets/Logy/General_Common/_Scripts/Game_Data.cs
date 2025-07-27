@@ -4,15 +4,15 @@ using UnityEngine;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Game_Data : Process
+    public struct Game_Data
     {
-        [field: SerializeField] public Device_Data device { get; private set; } = new();
+        [field: SerializeField] public Device_Data device { get; private set; }
 
-        public Game_Data() : base(nameof(Device_Data)) {}
-
-        protected override void Initialize_Detail()
+        public Game_Data Initialize_With_Return()
         {
-            device.Initialize();
+            device = device.Initialize_With_Return();
+
+            return this;
         }
     }
 }

@@ -16,8 +16,8 @@ namespace Logy.Unity_Common_v01
         public static void Check_Initialize()
         {
             state = new(nameof(State_Test));
-            
-            Process.Check_Initialize(state);
+
+            state.Initialize();
         }
         
         public static void Check_Variable()

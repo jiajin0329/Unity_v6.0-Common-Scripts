@@ -5,7 +5,7 @@ using UnityEngine.Events;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Input_Model : Process, IHas_Begin
+    public class Input_Model
     {
         [field: SerializeField] public bool inputDown { get; private set; }
         [field: SerializeField] public bool input { get; private set; }
@@ -24,9 +24,7 @@ namespace Logy.Unity_Common_v01
         public event UnityAction Input_Action;
         public event UnityAction InputUp_Action;
 
-        public Input_Model() : base(nameof(Input_Model)) {}
-
-        protected override void Initialize_Detail()
+        public void Initialize()
         {
             inputDown = false;
             input = false;
@@ -43,7 +41,7 @@ namespace Logy.Unity_Common_v01
             Get_input_radian_Action = null;
         }
 
-        protected override void Begin_Detail()
+        public void Begin()
         {
             Get_inputDown_Action?.Invoke(inputDown);
             Get_input_Action?.Invoke(input);

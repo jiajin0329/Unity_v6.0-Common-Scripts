@@ -11,7 +11,7 @@ namespace Logy.Unity_Common_v01
         {
             game_data = new();
 
-            Process.Check_Initialize(game_data);
+            game_data = game_data.Initialize_With_Return();
         }
 
         public static void Check_Variable()

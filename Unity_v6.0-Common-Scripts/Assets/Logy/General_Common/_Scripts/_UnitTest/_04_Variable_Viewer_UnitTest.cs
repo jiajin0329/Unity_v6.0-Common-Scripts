@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using NUnit.Framework;
 
@@ -10,9 +11,11 @@ namespace Logy.Unity_Common_v01
 
         public static async UniTask Check_Initialize()
         {
-            _variable_viewer = new(nameof(Variable_Viewer));
+            _variable_viewer = new();
 
-            await Process.Check_Initialize_With_UniTask(_variable_viewer);
+            CancellationTokenSource _cancellationTokenSource = new();
+            await _variable_viewer.Initialize_With_UniTask(_cancellationTokenSource.Token);
+            _cancellationTokenSource.Cancel();
         }
 
         public static void Check_Variable()

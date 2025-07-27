@@ -10,13 +10,13 @@ namespace Logy.Unity_Common_v01
         public static void Check_Initialize()
         {
             model = Factory_StateMachine_Model_TopDown.New(Factory_StateMachine_Model_TopDown.Type.player);
-            
-            Process.Check_Initialize(model);
+
+            model.Initialize();
         }
 
         public static void Check_Begin()
-        {            
-            Process.Check_Begin(model);
+        {
+            model.Begin();
         }
 
         public static void Check_Variable()

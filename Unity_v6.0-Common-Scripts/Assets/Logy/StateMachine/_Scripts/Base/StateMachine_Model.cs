@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class StateMachine_Model : Process, IHas_Begin, IStateMachine_Model
+    public class StateMachine_Model : IStateMachine_Model
     {
         [field: SerializeField] public byte current_state_index { get; private set; }
         protected State[] _states;
@@ -16,9 +16,7 @@ namespace Logy.Unity_Common_v01
 #endif
         public event UnityAction<byte> Get_current_state_index_Action;
 
-        public StateMachine_Model() : base(nameof(StateMachine_Model)) {}
-
-        protected override void Initialize_Detail()
+        public void Initialize()
         {
             Initialize_All_State();
 
@@ -66,7 +64,7 @@ namespace Logy.Unity_Common_v01
         }
 #endif
 
-        protected override void Begin_Detail()
+        public void Begin()
         {
             Get_current_state_index_Action?.Invoke(current_state_index);
         }

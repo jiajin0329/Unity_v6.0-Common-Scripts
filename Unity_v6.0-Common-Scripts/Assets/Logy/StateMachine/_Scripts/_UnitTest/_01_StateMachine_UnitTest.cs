@@ -8,8 +8,8 @@ namespace Logy.Unity_Common_v01
         public static void Check_Initialize()
         {
             stateMachine = new();
-            
-            Process.Check_Initialize(stateMachine);
+
+            stateMachine.Initialize();
         }
     }
 }

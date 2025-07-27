@@ -10,8 +10,8 @@ namespace Logy.Unity_Common_v01
         public static void Check_Initialize()
         {
             _state = new(nameof(Player_State_TopDown));
-            
-            Process.Check_Initialize(_state);
+
+            _state.Initialize();
         }
 
         public static void Check_Variable()

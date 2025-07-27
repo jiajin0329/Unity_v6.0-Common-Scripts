@@ -3,15 +3,13 @@ using System;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Input_Generic_Presenter : Process
+    public class Input_Generic_Presenter
     {
         private Input_Generic_Model _model;
 
-        public Input_Generic_Presenter() : base(nameof(Input_Generic_Presenter)) {}
-
         public void Set_Reference(Input_Generic_Model _model) { this._model = _model; }
 
-        protected override void Initialize_Detail()
+        public void Initialize()
         {
             Add_Touch_Controller_Listener();
             Add_Controller_Listener();

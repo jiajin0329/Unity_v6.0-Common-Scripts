@@ -6,7 +6,7 @@ using System.Threading;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Updater : Process
+    public class Updater
     {
         public string name { get; private set; }
         public CancellationToken cancellationToken  { get; private set; }
@@ -14,13 +14,13 @@ namespace Logy.Unity_Common_v01
         private bool updating;
         public int delay_ms = 16;
 
-        public Updater(string _owner_name, CancellationToken _cancellationToken) : base($"{_owner_name} {nameof(Updater)}")
+        public Updater(string _owner_name, CancellationToken _cancellationToken)
         {
             name = $"{_owner_name} {nameof(Updater)}";
             this.cancellationToken = _cancellationToken;
         }
 
-        protected override void Initialize_Detail()
+        public void Initialize()
         {
             Update_Action = null;
         }

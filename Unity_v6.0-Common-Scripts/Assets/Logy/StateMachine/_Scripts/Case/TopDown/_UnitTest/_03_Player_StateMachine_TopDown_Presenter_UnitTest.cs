@@ -9,8 +9,8 @@ namespace Logy.Unity_Common_v01
         public static void Check_Initialize()
         {
             Build_Data();
-            
-            Process.Check_Initialize(_presenter);
+
+            _presenter.Initialize();
         }
 
         private static void Build_Data()

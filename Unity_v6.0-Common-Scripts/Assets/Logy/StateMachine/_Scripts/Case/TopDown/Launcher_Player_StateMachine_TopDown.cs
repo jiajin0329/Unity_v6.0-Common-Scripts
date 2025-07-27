@@ -19,7 +19,7 @@ namespace Logy.Unity_Common_v01
         [SerializeField] private Player_Input_Generic _player_input;
         [SerializeField] private Player_StateMachine_TopDown _player_stateMachine;
 
-        public Core_Player_StateMachine_TopDown() : base(nameof(Core_Player_StateMachine_TopDown)) { }
+        public Core_Player_StateMachine_TopDown() : base(nameof(Core_Player_StateMachine_TopDown)) {}
 
         public override async UniTask Reset(CancellationToken _cancellationToken)
         {

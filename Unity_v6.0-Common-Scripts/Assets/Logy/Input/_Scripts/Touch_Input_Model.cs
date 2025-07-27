@@ -5,7 +5,7 @@ using UnityEngine.Events;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Touch_Input_Model : Process, IHas_Begin
+    public class Touch_Input_Model
     {
         [field: SerializeField] public Vector2 start_touch_vector2 { get; private set; }
         [field: SerializeField] public Vector2 touch_vector2 { get; private set; }
@@ -20,9 +20,7 @@ namespace Logy.Unity_Common_v01
         public event UnityAction Touch_Action;
         public event UnityAction TouchUp_Action;
 
-        public Touch_Input_Model() : base(nameof(Touch_Input_Model)) {}
-
-        protected override void Initialize_Detail()
+        public void Initialize()
         {
             start_touch_vector2 = Vector2.zero;
             touch_vector2 = Vector2.zero;
@@ -37,7 +35,7 @@ namespace Logy.Unity_Common_v01
             TouchUp_Action = null;
         }
 
-        protected override void Begin_Detail()
+        public void Begin()
         {
             Get_start_touch_vector2_Action?.Invoke(start_touch_vector2);
             Get_touch_vector2_Action?.Invoke(touch_vector2);

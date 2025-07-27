@@ -5,7 +5,7 @@ using UnityEngine.Events;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public abstract class State : Process, IState
+    public abstract class State : IState
     {
         [field: SerializeField] public string name { get; private set; }
 
@@ -13,12 +13,9 @@ namespace Logy.Unity_Common_v01
         public event UnityAction Update_Action;
         public event UnityAction End_Action;
 
-        public State(string _name) : base(_name)
-        {
-            name  = _name;
-        }
+        public State(string _name) { name  = _name; }
 
-        protected override void Initialize_Detail()
+        public void Initialize()
         {
             Start_Action = null;
             Update_Action = null;

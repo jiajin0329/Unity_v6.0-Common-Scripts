@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class VirtualJoystick_View : Process
+    public class VirtualJoystick_View
     {        
         [SerializeField] private RectTransform _root_ui;
         private Transform _stick_ui;
@@ -15,9 +15,7 @@ namespace Logy.Unity_Common_v01
         public bool is_root_ui_notNull => _root_ui != null;
         public Vector2 _root_ui_sizeDelta => _root_ui.sizeDelta;
 
-        public VirtualJoystick_View() : base(nameof(VirtualJoystick_View)) {}
-
-        protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
+        public async UniTask Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
             await Variable_Null_Handle(_cancellationToken);
 

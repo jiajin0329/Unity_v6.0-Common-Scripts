@@ -12,13 +12,11 @@ namespace Logy.Unity_Common_v01
 
         private IStateMachine_Model _stateMachine;
 
-        public StateMachine_Variable_Viewer() : base(nameof(StateMachine_Variable_Viewer)) {}
-
         public void Set_Reference(IStateMachine_Model _stateMachine) { this._stateMachine = _stateMachine; }
 
-        protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
+        public override async UniTask Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
-            await base.Initialize_Detail_With_UniTask(_cancellationToken);
+            await base.Initialize_With_UniTask(_cancellationToken);
 
             _player_state_variable_ui.Initialize("player current state : ", _variable_text);
 
