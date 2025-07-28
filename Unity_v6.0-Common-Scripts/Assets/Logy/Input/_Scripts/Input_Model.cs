@@ -101,15 +101,11 @@ namespace Logy.Unity_Common_v01
 
         public void Set_input_vector2(Vector2 _set)
         {
-            _Set_input_vector2(_set);
-            Set_input_distance();
-            Set_input_radian();
-        }
-
-        private void _Set_input_vector2(Vector2 _set)
-        {
             input_vector2 = _set;
             Get_input_vector2_Action?.Invoke(input_vector2);
+
+            Set_input_distance();
+            Set_input_radian();
         }
 
         private void Set_input_distance()

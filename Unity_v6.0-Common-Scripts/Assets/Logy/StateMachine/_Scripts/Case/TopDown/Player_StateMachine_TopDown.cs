@@ -6,9 +6,9 @@ using UnityEngine;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Player_StateMachine_TopDown : Process, IHas_Begin
+    public class Player_StateMachine_TopDown : Process
     {
-        [field: SerializeField] public StateMachine_Model_TopDown stateMachine { get; private set; } = Factory_StateMachine_Model_TopDown.New(Factory_StateMachine_Model_TopDown.Type.player);
+        [field: SerializeField] public StateMachine_TopDown stateMachine { get; private set; } = Factory_StateMachine_TopDown.New(Factory_StateMachine_TopDown.Type.player);
         [SerializeField] private Player_StateMachine_TopDown_Presenter _presenter = new();
 #if DEBUG
         [field: SerializeField] public StateMachine_Variable_Viewer variable_viewer { get; private set; } = new();
@@ -29,7 +29,7 @@ namespace Logy.Unity_Common_v01
         {
             Player_StateMachine_TopDown_Presenter.Data _data = new()
             {
-                stateMachine_model = stateMachine,
+                stateMachine = stateMachine,
                 input_model = _input_model,
             };
 
@@ -50,11 +50,6 @@ namespace Logy.Unity_Common_v01
 #else
             await UniTask.CompletedTask;
 #endif
-        }
-
-        protected override void Begin_Detail()
-        {
-            stateMachine.Begin();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Logy.Unity_Common_v01
             _presenter = new();
             Player_StateMachine_TopDown_Presenter.Data _data = new()
             {
-                stateMachine_model = _02_StateMachine_Model_TopDown_UnitTest.model,
+                stateMachine = _02_StateMachine_TopDown_UnitTest.stateMachine,
                 input_model = _02_Input_Model_UnitTest.model,
             };
 

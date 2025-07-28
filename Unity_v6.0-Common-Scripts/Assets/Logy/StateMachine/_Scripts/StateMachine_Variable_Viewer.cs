@@ -10,9 +10,9 @@ namespace Logy.Unity_Common_v01
     {
         private Variable_UI _player_state_variable_ui;
 
-        private IStateMachine_Model _stateMachine;
+        private IStateMachine _stateMachine;
 
-        public void Set_Reference(IStateMachine_Model _stateMachine) { this._stateMachine = _stateMachine; }
+        public void Set_Reference(IStateMachine _stateMachine) { this._stateMachine = _stateMachine; }
 
         public override async UniTask Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
@@ -20,12 +20,11 @@ namespace Logy.Unity_Common_v01
 
             _player_state_variable_ui.Initialize("player current state : ", _variable_text);
 
-            _stateMachine.Get_current_state_index_Action += Update_player_state_variable_ui;
+            _stateMachine.Get_current_state_name_Action += Update_player_state_variable_ui;
         }
 
-        private void Update_player_state_variable_ui(byte _current_state_index)
+        private void Update_player_state_variable_ui(string _current_state_name)
         {
-            string _current_state_name = _stateMachine.states[_current_state_index].name;
             _player_state_variable_ui.Update_Text(_current_state_name);
         }
     }

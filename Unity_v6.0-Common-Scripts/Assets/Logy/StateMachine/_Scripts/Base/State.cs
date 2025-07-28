@@ -9,17 +9,17 @@ namespace Logy.Unity_Common_v01
     {
         [field: SerializeField] public string name { get; private set; }
 
-        public event UnityAction Start_Action;
+        public event UnityAction OnEnter_Action;
         public event UnityAction Update_Action;
-        public event UnityAction End_Action;
+        public event UnityAction OnExit_Action;
 
-        public State(string _name) { name  = _name; }
+        public State(string _name) { name = _name; }
 
-        public void Initialize()
+        public virtual void Initialize()
         {
-            Start_Action = null;
+            OnEnter_Action = null;
             Update_Action = null;
-            End_Action = null;
+            OnExit_Action = null;
 
 #if UNITY_EDITOR
             Add_Action_Log();
@@ -29,27 +29,16 @@ namespace Logy.Unity_Common_v01
 #if UNITY_EDITOR
         private void Add_Action_Log()
         {
-            Start_Action += () => Debug.Log($"{name} {nameof(Start_Action)}");
+            OnEnter_Action += () => Debug.Log($"{name} {nameof(OnEnter_Action)}");
             Update_Action += () => Debug.Log($"{name} {nameof(Update_Action)}");
-            End_Action += () => Debug.Log($"{name} {nameof(End_Action)}");
+            OnExit_Action += () => Debug.Log($"{name} {nameof(OnExit_Action)}");
         }
 #endif
 
         public abstract byte Get_Next_State_Index();
 
-        public void Start()
-        {
-            Start_Action?.Invoke();
-        }
-
-        public void Update()
-        {
-            Update_Action?.Invoke();
-        }
-
-        public void End()
-        {
-            End_Action?.Invoke();
-        }
+        public void OnEnter() { OnEnter_Action?.Invoke(); }
+        public void OnUpdate() { Update_Action?.Invoke(); }
+        public void OnExit() { OnExit_Action?.Invoke(); }
     }
 }

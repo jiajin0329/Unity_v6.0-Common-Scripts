@@ -8,7 +8,7 @@ namespace Logy.Unity_Common_v01
         private Data _data;
         public struct Data
         {
-            public IStateMachine_Model stateMachine_model;
+            public StateMachine_TopDown stateMachine;
             public Input_Model input_model;
         }
 
@@ -16,12 +16,12 @@ namespace Logy.Unity_Common_v01
         
         public void Initialize()
         {
-            _data.input_model.Get_input_distance_Action += Player_State_TopDown.Set_input_distance;
-            _data.input_model.Get_input_radian_Action += Player_State_TopDown.Set_input_radian;
+            _data.input_model.Get_input_distance_Action += _data.stateMachine.Set_input_distance;
+            _data.input_model.Get_input_radian_Action += _data.stateMachine.Switch_Direction;
 
-            _data.input_model.InputDown_Action += _data.stateMachine_model.Update;
-            _data.input_model.Input_Action += _data.stateMachine_model.Update;
-            _data.input_model.InputUp_Action += _data.stateMachine_model.Update;
+            _data.input_model.InputDown_Action += _data.stateMachine.Update;
+            _data.input_model.Input_Action += _data.stateMachine.Update;
+            _data.input_model.InputUp_Action += _data.stateMachine.Update;
         }
     }
 }

@@ -77,7 +77,8 @@ namespace Logy.Unity_Common_v01
             touch_vector2 = _set;
             Get_touch_vector2_Action?.Invoke(touch_vector2);
 
-            Get_input_vector2_Action?.Invoke(Touch_Vector2_To_Input_Vector2());
+            Vector2 _input_vector2 = Touch_Vector2_To_Input_Vector2();
+            Get_input_vector2_Action?.Invoke(_input_vector2);
         }
 
         private Vector2 Touch_Vector2_To_Input_Vector2()
