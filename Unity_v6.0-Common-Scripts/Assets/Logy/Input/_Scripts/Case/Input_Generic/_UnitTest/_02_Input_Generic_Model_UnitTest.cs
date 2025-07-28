@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using System.Threading;
 using Cysharp.Threading.Tasks;
 
 namespace Logy.Unity_Common_v01
@@ -11,12 +12,14 @@ namespace Logy.Unity_Common_v01
         {
             model = new();
 
-            await Process.Check_Initialize_With_UniTask(model);
+            CancellationTokenSource _cancellationTokenSource = new();
+            await model.Initialize_With_UniTask(_cancellationTokenSource.Token);
+            _cancellationTokenSource.Cancel();
         }
 
         public static void Check_Begin()
         {
-            Process.Check_Begin(model);
+            model.Begin();
         }
 
         public static void Remove_All_inputAction_Listener()

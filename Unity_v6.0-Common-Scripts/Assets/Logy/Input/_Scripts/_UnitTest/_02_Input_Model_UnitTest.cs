@@ -11,13 +11,13 @@ namespace Logy.Unity_Common_v01
         public static void Check_Initialize()
         {
             model = new();
-            
-            Process.Check_Initialize(model);
+
+            model.Initialize();
         }
 
         public static void Check_Begin()
         {
-            Process.Check_Begin(model);
+            model.Begin();
         }
 
         public static void Check_Variable()

@@ -29,7 +29,7 @@ namespace Logy.Unity_Common_v01
         {
             cancellationTokenSource = new();
 
-            _game_data.Initialize();
+            _game_data = _game_data.Initialize_With_Return();
 
             if (this is IHas_Initialize) Initialize();
 

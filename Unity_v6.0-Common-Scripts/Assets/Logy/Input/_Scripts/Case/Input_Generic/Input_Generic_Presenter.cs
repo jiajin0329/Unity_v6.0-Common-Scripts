@@ -3,15 +3,13 @@ using System;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Input_Generic_Presenter : Process
+    public class Input_Generic_Presenter
     {
         private Input_Generic_Model _model;
 
-        public Input_Generic_Presenter() : base(nameof(Input_Generic_Presenter)) {}
-
         public void Set_Reference(Input_Generic_Model _model) { this._model = _model; }
 
-        protected override void Initialize_Detail()
+        public void Initialize()
         {
             Add_Touch_Controller_Listener();
             Add_Controller_Listener();
@@ -25,9 +23,9 @@ namespace Logy.Unity_Common_v01
 
             Add_Get_touch_input_vector2_Listener();
 
-            Add_Get_Touch_Listener();
+            Add_Touch_Listener();
 
-            Add_Get_TouchUp_Listener();
+            Add_TouchUp_Listener();
         }
 
         private void Add_Get_touch_range_radius_pixel_Listener()
@@ -52,13 +50,13 @@ namespace Logy.Unity_Common_v01
             _model.touch_input_model.Get_input_vector2_Action += _model.virtualJoystick_view.Set_Stick_Position;
         }
 
-        private void Add_Get_Touch_Listener()
+        private void Add_Touch_Listener()
         {
             _model.controller_inputAction_generic.Touch_Action += _model.touch_input_model.OnTouch;
             _model.touch_input_model.Touch_Action += _model.input_model.OnInput;
         }
 
-        private void Add_Get_TouchUp_Listener()
+        private void Add_TouchUp_Listener()
         {
             _model.controller_inputAction_generic.TouchUp_Action += _model.touch_input_model.OnTouchUp;
             _model.touch_input_model.TouchUp_Action += _model.input_model.OnInputUp;

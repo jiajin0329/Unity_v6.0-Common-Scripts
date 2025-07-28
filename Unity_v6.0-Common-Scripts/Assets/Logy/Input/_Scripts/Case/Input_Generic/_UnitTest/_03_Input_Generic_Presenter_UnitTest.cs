@@ -10,7 +10,7 @@ namespace Logy.Unity_Common_v01
             _presenter = new();
             _presenter.Set_Reference(_02_Input_Generic_Model_UnitTest.model);
 
-            Process.Check_Initialize(_presenter);
+            _presenter.Initialize();
         }
     }
 }

@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace Logy.Unity_Common_v01
 {
-    public class _02_Player_View_TopDown_UnitTest_PlayMode
+    public class _02_Player_View_TopDown_UnitTest_EditMode
     {
         [Test]
         public async Task _01_Check_Initialize()

@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using NUnit.Framework;
 
@@ -12,7 +13,9 @@ namespace Logy.Unity_Common_v01
         {
             _virtualJoystick_view = new();
             
-            await Process.Check_Initialize_With_UniTask(_virtualJoystick_view);
+            CancellationTokenSource _cancellationTokenSource = new();
+            await _virtualJoystick_view.Initialize_With_UniTask(_cancellationTokenSource.Token);
+            _cancellationTokenSource.Cancel();
         }
 
         public static void Check_Variable()

@@ -2,13 +2,8 @@ using UnityEngine.Events;
 
 namespace Logy.Unity_Common_v01
 {
-    public struct Is
+    public interface Is
     {
-        private const float _upper_left_radian = -0.7853982f;
-        private const float _upper_right_radian = 0.7853982f;
-        private const float _lower_left_radian = -2.356194f;
-        private const float _lower_right_radian = 2.356194f;
-
         public static bool Variable_Null(object _target, string _name)
         {
             if (_target == null)
@@ -32,12 +27,20 @@ namespace Logy.Unity_Common_v01
             return _unityAction != null;
         }
 
-        public static bool Up_Radian(float _radian) { return _radian >= _upper_left_radian && _radian <= _upper_right_radian; }
+        public interface Radian
+        {
+            private const float _upper_left_radian = -0.7853982f;
+            private const float _upper_right_radian = 0.7853982f;
+            private const float _lower_left_radian = -2.356194f;
+            private const float _lower_right_radian = 2.356194f;
 
-        public static bool Down_Radian(float _radian) { return _radian <= _lower_left_radian && _radian >= _lower_right_radian; }
+            public static bool Down(float _radian) { return _radian <= _lower_left_radian && _radian >= _lower_right_radian; }
 
-        public static bool Left_Radian(float _radian) { return _radian < _upper_left_radian && _radian > _lower_left_radian; }
-        
-        public static bool Right_Radian (float _radian) { return _radian > _upper_right_radian && _radian < _lower_right_radian ; }
+            public static bool Left(float _radian) { return _radian < _upper_left_radian && _radian > _lower_left_radian; }
+
+            public static bool Right (float _radian) { return _radian > _upper_right_radian && _radian < _lower_right_radian ; }
+            
+            public static bool Up(float _radian) { return _radian >= _upper_left_radian && _radian <= _upper_right_radian; }
+        }
     }
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Device_Data : Process
+    public struct Device_Data
     {
         [field: SerializeField] public float dpi { get; private set; }
 
-        public Device_Data() : base(nameof(Device_Data)) {}
-
-        protected override void Initialize_Detail()
+        public Device_Data Initialize_With_Return()
         {
             dpi = Screen.dpi;
+
+            return this;
         }
     }
 }

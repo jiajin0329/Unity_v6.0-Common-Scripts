@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Logy/Case/Input_Generic_TopDown/Assets/Input Generic TopDown Demo.unity
+    path: Assets/Logy/_Case/Input_Generic_TopDown/Assets/Input Generic TopDown Demo.unity
     guid: 70d713c54c3205a4da3a38fe181f656a
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 60edd5fe75a557d49a247e73608c0364, type: 2}

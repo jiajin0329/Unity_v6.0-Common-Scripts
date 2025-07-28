@@ -1,4 +1,4 @@
-#if DEBUG
+#if UNITY_WEBGL && DEBUG
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
@@ -21,13 +21,11 @@ namespace Logy.Unity_Common_v01
 
         [NonSerialized] public Input_Generic_Model _model;
 
-        public Input_Generic_Variable_Viewer() : base(nameof(Input_Generic_Variable_Viewer)) {}
-
         public void Set_Reference(Input_Generic_Model _model) { this._model = _model; }
 
-        protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
+        public override async UniTask Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
-            await base.Initialize_Detail_With_UniTask(_cancellationToken);
+            await base.Initialize_With_UniTask(_cancellationToken);
 
             Initialize_Variable_Text();
 

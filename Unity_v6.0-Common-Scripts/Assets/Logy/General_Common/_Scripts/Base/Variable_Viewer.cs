@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace Logy.Unity_Common_v01
 {
-    public class Variable_Viewer : Process
+    public class Variable_Viewer
     {
         [SerializeField] protected TextMeshProUGUI _variable_text;
         public bool is_variable_text_notNull => _variable_text != null;
@@ -35,9 +35,7 @@ namespace Logy.Unity_Common_v01
             }
         }
 
-        public Variable_Viewer(string _name) : base(_name) {}
-
-        protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
+        public virtual async UniTask Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
             await Variable_Null_Handle(_cancellationToken);
         }

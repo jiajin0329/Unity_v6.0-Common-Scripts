@@ -22,12 +22,10 @@ namespace Logy.Unity_Common_v01
         public event UnityAction TouchUp_Action;
 
         public bool is_touchPress_inputAction_notNull => _touchPress_inputAction != null;
-        
-        public Controller_InputAction_Generic() : base(nameof(Controller_InputAction_Generic)) {}
 
-        protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
+        public override async UniTask Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
-            await base.Initialize_Detail_With_UniTask(_cancellationToken);
+            await base.Initialize_With_UniTask(_cancellationToken);
 
             Variable_Initialize();
 
@@ -64,9 +62,9 @@ namespace Logy.Unity_Common_v01
             _touchPress_inputAction.canceled += OnTouchUp;
         }
 
-        protected override void Begin_Detail()
+        public override void Begin()
         {
-            base.Begin_Detail();
+            base.Begin();
 
             Get_start_touch_vector2_Action?.Invoke(Vector2.zero);
             Get_touch_vector2_Action?.Invoke(Vector2.zero);

@@ -48,27 +48,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <process_state>k__BackingField: 0
   _game_data:
-    <process_state>k__BackingField: 0
     <device>k__BackingField:
-      <process_state>k__BackingField: 0
       <dpi>k__BackingField: 0
   _core_input_generic_topDown:
     <process_state>k__BackingField: 0
     _player_input:
       <process_state>k__BackingField: 0
       <model>k__BackingField:
-        <process_state>k__BackingField: 0
         <controller_inputAction_generic>k__BackingField:
-          <process_state>k__BackingField: 0
           _inputActionAsset: {fileID: -944628639613478452, guid: 5536a191df3e3b04aa33d0c6c5bee9f6, type: 3}
           _input_updater:
-            <process_state>k__BackingField: 0
             delay_ms: 0
           _touch_updater:
-            <process_state>k__BackingField: 0
             delay_ms: 0
         <input_model>k__BackingField:
-          <process_state>k__BackingField: 0
           <inputDown>k__BackingField: 0
           <input>k__BackingField: 0
           <inputUp>k__BackingField: 0
@@ -76,32 +69,24 @@ MonoBehaviour:
           <input_distance>k__BackingField: 0
           <input_radian>k__BackingField: 0
         <touch_input_model>k__BackingField:
-          <process_state>k__BackingField: 0
           <start_touch_vector2>k__BackingField: {x: 0, y: 0}
           <touch_vector2>k__BackingField: {x: 0, y: 0}
         <virtualJoystick_view>k__BackingField:
-          <process_state>k__BackingField: 0
           _root_ui: {fileID: 2315728251422970466}
-      <presenter>k__BackingField:
-        <process_state>k__BackingField: 0
       <variable_viewer>k__BackingField:
-        <process_state>k__BackingField: 0
         _variable_text: {fileID: 5413429398007660917}
-    _plyaer_stateMachine:
+    _player_stateMachine:
       <process_state>k__BackingField: 0
       <stateMachine>k__BackingField:
-        <process_state>k__BackingField: 0
-        <current_state_index>k__BackingField: 0
         current_state_name: 
-        state_names: []
-      _presenter:
-        <process_state>k__BackingField: 0
+        show_all_state_name: []
+        _direction: 0
       <variable_viewer>k__BackingField:
-        <process_state>k__BackingField: 0
         _variable_text: {fileID: 5413429398007660917}
-    _player_view:
+    _player_view_presenter:
       <process_state>k__BackingField: 0
-      _prefab: {fileID: 9103964399267910336, guid: 400f3501d896ad249bcb6ae16920d251, type: 3}
+      <player_view>k__BackingField:
+        _prefab: {fileID: 9103964399267910336, guid: 400f3501d896ad249bcb6ae16920d251, type: 3}
 --- !u!1 &5319500571916398917
 GameObject:
   m_ObjectHideFlags: 0

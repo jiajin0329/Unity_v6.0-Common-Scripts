@@ -1,3 +1,4 @@
+#if UNITY_WEBGL
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Logy.Unity_Common_v01
     {
         [SerializeField] Core_Input_Generic_TopDown _core_input_generic_topDown;
         protected override Core _core => _core_input_generic_topDown;
-        
+
         public Launcher_Input_Generic_TopDown() : base(nameof(Launcher_Input_Generic_TopDown)) {}
     }
 
@@ -17,16 +18,16 @@ namespace Logy.Unity_Common_v01
     public class Core_Input_Generic_TopDown : Core, IHas_Begin
     {
         [SerializeField] private Player_Input_Generic _player_input;
-        [SerializeField] private Plyaer_StateMachine_TopDown _plyaer_stateMachine;
-        [SerializeField] private Player_View_TopDown _player_view;
+        [SerializeField] private Player_StateMachine_TopDown _player_stateMachine;
+        [SerializeField] private Player_View_TopDown_Presenter _player_view_presenter;
 
-        public Core_Input_Generic_TopDown() : base(nameof(Core_Input_Generic_TopDown)) { }
+        public Core_Input_Generic_TopDown() : base(nameof(Core_Input_Generic_TopDown)) {}
 
         public override async UniTask Reset(CancellationToken _cancellationToken)
         {
             await _player_input.Reset(_cancellationToken);
-            await _plyaer_stateMachine.Reset(_cancellationToken);
-            await _player_view.Variable_Null_Handle(_cancellationToken);
+            await _player_stateMachine.Reset(_cancellationToken);
+            await _player_view_presenter.player_view.Variable_Null_Handle(_cancellationToken);
         }
 
         protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
@@ -40,27 +41,25 @@ namespace Logy.Unity_Common_v01
 
         private async UniTask _plyaer_stateMachine_Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
-            _plyaer_stateMachine.Set_Reference(_player_input.model.input_model);
-            await _plyaer_stateMachine.Initialize_With_UniTask(_cancellationToken);
+            _player_stateMachine.Set_Reference(_player_input.model.input_model);
+            await _player_stateMachine.Initialize_With_UniTask(_cancellationToken);
         }
 
         private async UniTask _player_view_topDown_Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
-            Player_View_TopDown.Data _data = new()
+            Player_View_TopDown_Presenter.Data _data = new()
             {
                 input_model = _player_input.model.input_model,
-                stateMachine_model = _plyaer_stateMachine.stateMachine,
+                stateMachine = _player_stateMachine.stateMachine,
             };
 
-            _player_view.Set_Reference(_data);
-            await _player_view.Initialize_With_UniTask(_cancellationToken);
+            _player_view_presenter.Set_Reference(_data);
+            await _player_view_presenter.Initialize_With_UniTask(_cancellationToken);
         }
 
         protected override void Begin_Detail()
         {
             _player_input.Begin();
-
-            _plyaer_stateMachine.Begin();
         }
 
         public override void Cancel()
@@ -70,3 +69,4 @@ namespace Logy.Unity_Common_v01
         }
     }
 }
+#endif

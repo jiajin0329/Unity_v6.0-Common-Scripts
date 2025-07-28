@@ -2,23 +2,23 @@
 
 namespace Logy.Unity_Common_v01
 {
-    public struct _03_Plyaer_StateMachine_TopDown_Presenter_UnitTest
+    public struct _03_Player_StateMachine_TopDown_Presenter_UnitTest
     {
-        private static Plyaer_StateMachine_TopDown_Presenter _presenter;
+        private static Player_StateMachine_TopDown_Presenter _presenter;
 
         public static void Check_Initialize()
         {
             Build_Data();
-            
-            Process.Check_Initialize(_presenter);
+
+            _presenter.Initialize();
         }
 
         private static void Build_Data()
         {
             _presenter = new();
-            Plyaer_StateMachine_TopDown_Presenter.Data _data = new()
+            Player_StateMachine_TopDown_Presenter.Data _data = new()
             {
-                stateMachine_model = _02_StateMachine_Model_TopDown_UnitTest.model,
+                stateMachine = _02_StateMachine_TopDown_UnitTest.stateMachine,
                 input_model = _02_Input_Model_UnitTest.model,
             };
 
