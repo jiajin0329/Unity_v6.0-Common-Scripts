@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4528779741334942788
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1909282076443357533, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
+      propertyPath: m_Name
+      value: TX-Brush-04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787446721780836957, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300138, guid: c3a40e1c46727b94e959990527f8e7fa, type: 3}
+    - target: {fileID: 7412654728098886385, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412654728098886385, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412654728098886385, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497894435788816502, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300138, guid: c3a40e1c46727b94e959990527f8e7fa, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
