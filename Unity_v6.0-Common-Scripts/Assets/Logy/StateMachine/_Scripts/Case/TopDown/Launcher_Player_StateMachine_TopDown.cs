@@ -36,7 +36,7 @@ namespace Logy.Unity_Common_v01
 
         private async UniTask _plyaer_stateMachine_Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
-            _player_stateMachine.Set_Reference(_player_input.model.input_model);
+            _player_stateMachine.Set_Reference(_player_input._model._input_model);
             await _player_stateMachine.Initialize_With_UniTask(_cancellationToken);
         }
 
@@ -50,7 +50,7 @@ namespace Logy.Unity_Common_v01
         public override void Cancel()
         {
             //The project has disabled Reload Domain, so Listeners need to be manually removed.
-            _player_input.model.controller_inputAction_generic.Remove_All_inputAction_Listener();
+            _player_input._model.controller_inputAction_generic.Remove_All_inputAction_Listener();
         }
     }
 }

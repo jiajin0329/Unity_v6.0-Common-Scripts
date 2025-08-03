@@ -12,12 +12,6 @@ namespace Logy.Unity_Common_v01
         }
 
         [Test]
-        public void _02_Check_Begin()
-        {
-            _02_Input_Model_UnitTest.Check_Begin();
-        }
-
-        [Test]
         public void _03_Check_Variable()
         {
             _02_Input_Model_UnitTest.Check_Variable();

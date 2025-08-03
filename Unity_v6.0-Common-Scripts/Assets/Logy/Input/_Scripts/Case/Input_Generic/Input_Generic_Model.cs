@@ -6,10 +6,11 @@ using System.Threading;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Input_Generic_Model
+    public class Input_Generic_Model : IInput_Generic_Model
     {
         [field: SerializeField] public Controller_InputAction_Generic controller_inputAction_generic { get; private set; } = new();
-        [field: SerializeField] public Input_Model input_model { get; private set; } = new();
+        public IInput_Model input_model => _input_model;
+        [field: SerializeField] public Input_Model _input_model { get; private set; } = new();
         [field: SerializeField] public Touch_Input_Model touch_input_model { get; private set; } = new();
         [field: SerializeField] public VirtualJoystick_View virtualJoystick_view { get; private set; } = new();
 
@@ -17,7 +18,7 @@ namespace Logy.Unity_Common_v01
         {
             await controller_inputAction_generic.Initialize_With_UniTask(_cancellationToken);
 
-            input_model.Initialize();
+            _input_model.Initialize();
 
             touch_input_model.Initialize();
 
@@ -27,8 +28,6 @@ namespace Logy.Unity_Common_v01
         public void Begin()
         {
             controller_inputAction_generic.Begin();
-
-            input_model.Begin();
 
             touch_input_model.Begin();
         }

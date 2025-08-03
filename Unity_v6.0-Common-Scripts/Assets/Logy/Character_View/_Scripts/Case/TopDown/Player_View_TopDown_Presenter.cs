@@ -22,6 +22,8 @@ namespace Logy.Unity_Common_v01
 
         protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
         {
+            player_view.input_model = _data.input_model;
+
             await player_view.Initialize_With_UniTask(_cancellationToken);
 
             Add_View_Listener();
@@ -29,9 +31,11 @@ namespace Logy.Unity_Common_v01
 
         private void Add_View_Listener()
         {
-            Add_StateMachine_View_Listener();
+            _data.input_model.InputDown_Action += player_view.Update_Animator_Speed;
+            _data.input_model.Input_Action += player_view.Update_Animator_Speed;
+            _data.input_model.InputUp_Action += player_view.Update_Animator_Speed;
 
-            _data.input_model.Get_input_distance_Action += player_view.Update_Animator_Speed;
+            Add_StateMachine_View_Listener();
         }
 
         private void Add_StateMachine_View_Listener()

@@ -38,7 +38,7 @@ namespace Logy.Unity_Common_v01
         public override void Cancel()
         {
             //The project has disabled Reload Domain, so Listeners need to be manually removed.
-            _player_input.model.controller_inputAction_generic.Remove_All_inputAction_Listener();
+            _player_input._model.controller_inputAction_generic.Remove_All_inputAction_Listener();
         }
     }
 }

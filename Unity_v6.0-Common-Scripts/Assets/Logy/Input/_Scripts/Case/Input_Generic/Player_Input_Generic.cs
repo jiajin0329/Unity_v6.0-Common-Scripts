@@ -8,7 +8,8 @@ namespace Logy.Unity_Common_v01
     [Serializable]
     public class Player_Input_Generic : Process, IHas_Begin
     {
-        [field: SerializeField] public Input_Generic_Model model { get; private set; } = new();
+        public IInput_Generic_Model model => _model;
+        [field: SerializeField] public Input_Generic_Model _model { get; private set; } = new();
         [field: SerializeField] public Input_Generic_Presenter presenter { get; private set; } = new();
 #if DEBUG
         [field: SerializeField] public Input_Generic_Variable_Viewer variable_viewer { get; private set; } = new();
@@ -17,8 +18,8 @@ namespace Logy.Unity_Common_v01
 
         public async UniTask Reset(CancellationToken _cancellationToken)
         {
-            await model.controller_inputAction_generic.Variable_Null_Handle(_cancellationToken);
-            await model.virtualJoystick_view.Variable_Null_Handle(_cancellationToken);
+            await _model.controller_inputAction_generic.Variable_Null_Handle(_cancellationToken);
+            await _model.virtualJoystick_view.Variable_Null_Handle(_cancellationToken);
 
 #if DEBUG
             await variable_viewer.Variable_Null_Handle(_cancellationToken);
@@ -27,21 +28,21 @@ namespace Logy.Unity_Common_v01
 
         protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
         {
-            presenter.Set_Reference(model);
+            presenter.Set_Reference(_model);
 
-            await model.Initialize_With_UniTask(_cancellationToken);
+            await _model.Initialize_With_UniTask(_cancellationToken);
 
             presenter.Initialize();
 
 #if DEBUG
-            variable_viewer.Set_Reference(model);
+            variable_viewer.Set_Reference(_model);
             await variable_viewer.Initialize_With_UniTask(_cancellationToken);
 #endif
         }
 
         protected override void Begin_Detail()
         {
-            model.Begin();
+            _model.Begin();
         }
     }
 }

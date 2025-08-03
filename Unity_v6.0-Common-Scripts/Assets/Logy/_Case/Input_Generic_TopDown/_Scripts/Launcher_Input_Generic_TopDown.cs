@@ -8,7 +8,7 @@ namespace Logy.Unity_Common_v01
 {
     public class Launcher_Input_Generic_TopDown : Launcher, IHas_Initialize_With_UniTask, IHas_Begin
     {
-        [SerializeField] Core_Input_Generic_TopDown _core_input_generic_topDown;
+        [SerializeField] private Core_Input_Generic_TopDown _core_input_generic_topDown;
         protected override Core _core => _core_input_generic_topDown;
 
         public Launcher_Input_Generic_TopDown() : base(nameof(Launcher_Input_Generic_TopDown)) {}
@@ -41,7 +41,7 @@ namespace Logy.Unity_Common_v01
 
         private async UniTask _plyaer_stateMachine_Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
-            _player_stateMachine.Set_Reference(_player_input.model.input_model);
+            _player_stateMachine.Set_Reference(_player_input._model._input_model);
             await _player_stateMachine.Initialize_With_UniTask(_cancellationToken);
         }
 
@@ -49,7 +49,7 @@ namespace Logy.Unity_Common_v01
         {
             Player_View_TopDown_Presenter.Data _data = new()
             {
-                input_model = _player_input.model.input_model,
+                input_model = _player_input._model._input_model,
                 stateMachine = _player_stateMachine.stateMachine,
             };
 
@@ -65,7 +65,7 @@ namespace Logy.Unity_Common_v01
         public override void Cancel()
         {
             //The project has disabled Reload Domain, so Listeners need to be manually removed.
-            _player_input.model.controller_inputAction_generic.Remove_All_inputAction_Listener();
+            _player_input._model.controller_inputAction_generic.Remove_All_inputAction_Listener();
         }
     }
 }

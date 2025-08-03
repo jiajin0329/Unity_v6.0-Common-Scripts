@@ -11,6 +11,7 @@ namespace Logy.Unity_Common_v01
         [SerializeField] private GameObject _prefab;
         protected virtual string _prefab_name { get; } = "hero";
         protected Animator _animator;
+        public IInput_Model input_model;
 
         public Character_View_TopDown[] views = new Character_View_TopDown[StateMachine_TopDown.Index.amount]
         {
@@ -105,21 +106,21 @@ namespace Logy.Unity_Common_v01
             _animator.Play("walk-up");
         }
 
-        public void Update_Animator_Speed(float _input_distance)
+        public void Update_Animator_Speed()
         {
-            if (_input_distance > 0.98f)
+            if (input_model.input_distance > 0.98f)
             {
                 _animator.speed = 1f;
                 return;
             }
 
-            if (_input_distance == 0f)
+            if (input_model.input_distance == 0f)
             {
                 _animator.speed = 1f;
                 return;
             }
 
-            _animator.speed = _input_distance;
+            _animator.speed = input_model.input_distance;
         }
     }
 }

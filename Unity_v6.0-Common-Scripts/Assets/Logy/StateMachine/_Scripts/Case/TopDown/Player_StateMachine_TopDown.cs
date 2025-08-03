@@ -27,6 +27,8 @@ namespace Logy.Unity_Common_v01
 
         public void Set_Reference(Input_Model _input_model)
         {
+            stateMachine.input_model = _input_model;
+
             Player_StateMachine_TopDown_Presenter.Data _data = new()
             {
                 stateMachine = stateMachine,

@@ -22,12 +22,12 @@ namespace Logy.Unity_Common_v01
 
         public static void Check_Get_Variable_Listener()
         {
-            Assert.IsTrue(_input.model.virtualJoystick_view.touch_range_radius_pixel != 0f);
+            Assert.IsTrue(_input._model.virtualJoystick_view.touch_range_radius_pixel != 0f);
         }
 
         public static void Remove_All_inputAction_Listener()
         {
-            _input.model.controller_inputAction_generic.Remove_All_inputAction_Listener();
+            _input._model.controller_inputAction_generic.Remove_All_inputAction_Listener();
         }
     }
 }
