@@ -68,9 +68,9 @@ namespace Logy.Unity_Common_v01
         }
 #endif
 
-        public void Update()
+        public void Tick()
         {
-            _states[_current_state_index].OnUpdate();
+            _states[_current_state_index].OnTick();
 
             byte _next_state_index = _states[_current_state_index].Get_Next_State_Index();
 
@@ -81,7 +81,7 @@ namespace Logy.Unity_Common_v01
             _current_state_index = _next_state_index;
 
             _states[_current_state_index].OnEnter();
-            _states[_current_state_index].OnUpdate();
+            _states[_current_state_index].OnTick();
 
 #if UNITY_EDITOR
             Update_current_state_name();
@@ -100,7 +100,7 @@ namespace Logy.Unity_Common_v01
         {
             for (byte i = 0; i < _states.Length; i++)
             {
-                _states[i].Update_Action += _unityAction;
+                _states[i].Tick_Action += _unityAction;
             }
         }
     }

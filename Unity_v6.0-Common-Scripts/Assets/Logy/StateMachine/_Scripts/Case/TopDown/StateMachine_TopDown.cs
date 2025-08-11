@@ -8,8 +8,9 @@ namespace Logy.Unity_Common_v01
     {
         private State_TopDown[] _states;
         public IState_TopDown[] sates => _states;
-        public IInput_Model input_model;
-        public bool is_move => input_model.input_distance > 0.2f;
+        public bool is_move => velocity_model.velocity.magnitude > 0f;
+        public IMove_Model velocity_model;
+
         [field: SerializeField] public Direction direction { get; private set; }
 
         public State_TopDown state_idle => _states[Index.idle];
@@ -41,15 +42,17 @@ namespace Logy.Unity_Common_v01
 
         public void Switch_Direction()
         {
-            if (Is.Radian.Right(input_model.input_radian))
+            if (!is_move) return;
+
+            if (Is.Radian.Right(velocity_model.move_radian))
                 direction = Direction.right;
-            else if (Is.Radian.Left(input_model.input_radian))
+            else if (Is.Radian.Left(velocity_model.move_radian))
                 direction = Direction.left;
-            else if (Is.Radian.Up(input_model.input_radian))
+            else if (Is.Radian.Up(velocity_model.move_radian))
                 direction = Direction.up;
             else
                 direction = Direction.down;
-            
+
             _states[_current_state_index].Switch_Direction();
         }
     }

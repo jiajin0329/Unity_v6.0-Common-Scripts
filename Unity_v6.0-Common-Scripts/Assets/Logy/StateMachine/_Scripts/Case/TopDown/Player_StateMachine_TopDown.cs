@@ -16,7 +16,7 @@ namespace Logy.Unity_Common_v01
 
         public Player_StateMachine_TopDown() : base(nameof(Player_StateMachine_TopDown)) {}
 
-        public async UniTask Reset(CancellationToken _cancellationToken)
+        public async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
         {
 #if DEBUG
             await variable_viewer.Variable_Null_Handle(_cancellationToken);
@@ -25,14 +25,14 @@ namespace Logy.Unity_Common_v01
 #endif
         }
 
-        public void Set_Reference(Input_Model _input_model)
+        public void Set_Reference(IMove_Model _move_model)
         {
-            stateMachine.input_model = _input_model;
+            stateMachine.velocity_model = _move_model;
 
             Player_StateMachine_TopDown_Presenter.Data _data = new()
             {
                 stateMachine = stateMachine,
-                input_model = _input_model,
+                move_model = _move_model,
             };
 
             _presenter.Set_Reference(_data);

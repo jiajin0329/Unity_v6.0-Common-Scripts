@@ -52,6 +52,12 @@ namespace Logy.Unity_Common_v01
             _core.Begin();
         }
 
+        private void FixedUpdate()
+        {
+            _core.FixedUpdate();
+            Debug.Log($"{GetType().Name} {nameof(FixedUpdate)} called.");
+        }
+
         private void OnDestroy()
         {
             Cancel();

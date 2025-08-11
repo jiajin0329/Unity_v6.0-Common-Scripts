@@ -1,11 +1,10 @@
 {
-    "name": "_03_StateMachine_UnitTest_EditMode",
+    "name": "_04_StateMachine_UnitTest_EditMode",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "StateMachine_UnitTest",
-        "General Common",
         "UniTask"
     ],
     "includePlatforms": [

@@ -10,7 +10,7 @@ namespace Logy.Unity_Common_v01
         public static async UniTask Check_Initialize()
         {
             _stateMachine = new();
-            _stateMachine.Set_Reference(_02_Input_Model_UnitTest.model);
+            _stateMachine.Set_Reference(_02_Move_Model_UnitTest.model);
             
             await Process.Check_Initialize_With_UniTask(_stateMachine);
         }

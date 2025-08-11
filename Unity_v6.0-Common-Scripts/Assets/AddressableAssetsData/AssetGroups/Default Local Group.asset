@@ -20,7 +20,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 400f3501d896ad249bcb6ae16920d251
+  - m_GUID: 269be35adf2b3e147b0cb8ba346bd744
     m_Address: hero
     m_ReadOnly: 0
     m_SerializedLabels: []
@@ -30,8 +30,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a124856b4f473b4aab578e454314167
+    m_Address: Rigidbody
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 98193ebe049082d4c95afde5be1af044
     m_Address: Launcher Input Generic TopDown
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb4bcc8bdffb5f54b9c94bb9dd6ade4b
+    m_Address: Move_Image_UI
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

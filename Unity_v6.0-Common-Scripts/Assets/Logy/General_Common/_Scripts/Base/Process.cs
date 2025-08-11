@@ -120,6 +120,16 @@ namespace Logy.Unity_Common_v01
             await UniTask.CompletedTask;
         }
 
+        public void FixedUpdate()
+        {
+            FixedUpdate_Detail();
+        }
+
+        protected virtual void FixedUpdate_Detail()
+        {
+            Debug.LogError($"{_name} {nameof(FixedUpdate)} isn't implement!");
+        }
+
 #if UNITY_EDITOR
         public static void Check_Initialize(Process _process)
         {

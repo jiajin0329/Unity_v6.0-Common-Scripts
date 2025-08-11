@@ -22,7 +22,7 @@ namespace Logy.Unity_Common_v01
 
         public override async UniTask Reset(CancellationToken _cancellationToken)
         {
-            await _player_input.Reset(_cancellationToken);
+            await _player_input.Variable_Null_Handle(_cancellationToken);
         }
 
         protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)

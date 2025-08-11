@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Logy/_Case/Input_Generic_TopDown/Assets/Input Generic TopDown Demo.unity
-    guid: 70d713c54c3205a4da3a38fe181f656a
+    path: Assets/Bug Pixel Art/HD-2D-Test-Bug-Pixel-Art.unity
+    guid: 1f49002c434095d45b405ed1858d95d0
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 60edd5fe75a557d49a247e73608c0364, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 5536a191df3e3b04aa33d0c6c5bee9f6, type: 3}

@@ -1,5 +1,5 @@
 {
-    "name": "_04_1_Character_View_TopDown_UniTast_EditMode",
+    "name": "_05_1_Character_View_TopDown_UniTast_EditMode",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",

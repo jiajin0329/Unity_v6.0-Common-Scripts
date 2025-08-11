@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300132, guid: c3a40e1c46727b94e959990527f8e7fa, type: 3}
+    - target: {fileID: 3222016165524865149, guid: f37d89d829d05bb4d89d319929c58e67, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300132, guid: c3a40e1c46727b94e959990527f8e7fa, type: 3}
     - target: {fileID: 5235334986320394396, guid: f37d89d829d05bb4d89d319929c58e67, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -32,7 +36,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: TX-Brush-FilpX-05
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5835714328147756693, guid: f37d89d829d05bb4d89d319929c58e67, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

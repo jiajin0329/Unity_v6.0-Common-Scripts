@@ -1,11 +1,10 @@
 {
-    "name": "_03_StateMachine UnitTest PlayMode",
+    "name": "_04_StateMachine_UnitTest_PlayMode",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "StateMachine_UnitTest",
-        "General Common",
         "UniTask"
     ],
     "includePlatforms": [],

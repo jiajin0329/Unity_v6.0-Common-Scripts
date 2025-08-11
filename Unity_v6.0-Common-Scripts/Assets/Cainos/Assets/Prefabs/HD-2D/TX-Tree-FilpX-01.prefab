@@ -20,6 +20,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5835714328147756693, guid: f37d89d829d05bb4d89d319929c58e67, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835714328147756693, guid: f37d89d829d05bb4d89d319929c58e67, type: 3}
+      propertyPath: m_Radius
+      value: 0.19
+      objectReference: {fileID: 0}
     - target: {fileID: 8392322142757381020, guid: f37d89d829d05bb4d89d319929c58e67, type: 3}
       propertyPath: m_Name
       value: TX-Tree-FilpX-01

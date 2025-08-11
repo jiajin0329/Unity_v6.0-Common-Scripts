@@ -72,7 +72,7 @@ namespace Logy.Unity_Common_v01
 
         private void Set_input_distance()
         {
-            input_distance = Convert.Vector2_To_Distance(input_vector2);
+            input_distance = input_vector2.magnitude;
         }
         
         private void Set_input_radian()

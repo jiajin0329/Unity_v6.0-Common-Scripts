@@ -16,7 +16,7 @@ namespace Logy.Unity_Common_v01
 #endif
         public Player_Input_Generic() : base(nameof(Player_Input_Generic)) {}
 
-        public async UniTask Reset(CancellationToken _cancellationToken)
+        public async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
         {
             await _model.controller_inputAction_generic.Variable_Null_Handle(_cancellationToken);
             await _model.virtualJoystick_view.Variable_Null_Handle(_cancellationToken);
