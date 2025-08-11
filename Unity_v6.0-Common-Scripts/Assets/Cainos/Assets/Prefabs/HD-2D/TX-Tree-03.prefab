@@ -16,6 +16,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -93312722, guid: c3a40e1c46727b94e959990527f8e7fa, type: 3}
+    - target: {fileID: 4536314684419626068, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536314684419626068, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
+      propertyPath: m_Radius
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809355984112898748, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -93312722, guid: c3a40e1c46727b94e959990527f8e7fa, type: 3}
     - target: {fileID: 7412654728098886385, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0

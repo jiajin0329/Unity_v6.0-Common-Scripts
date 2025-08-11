@@ -51,12 +51,9 @@ namespace Logy.Unity_Common_v01
         {
             _model.controller_inputAction_generic.Get_input_type_Action += Update_input_type_variable_ui;
 
-            _model.input_model.Get_inputDown_Action += Update_inputDonw_variable_ui;
-            _model.input_model.Get_input_Action += Update_input_variable_ui;
-            _model.input_model.Get_inputUp_Action += Update_inputUp_variable_ui;
-            _model.input_model.Get_input_vector2_Action += Update_input_vector2_variable_ui;
-            _model.input_model.Get_input_distance_Action += Update_input_distance_variable_ui;
-            _model.input_model.Get_input_radian_Action += Update_input_radian_variable_ui;
+            _model.input_model.InputDown_Action += Update_input_model_variable_ui;
+            _model.input_model.Input_Action += Update_input_model_variable_ui;
+            _model.input_model.InputUp_Action += Update_input_model_variable_ui;
 
             _model.touch_input_model.Get_start_touch_vector2_Action += Update_start_touch_vector2_variable_ui;
             _model.touch_input_model.Get_touch_vector2_Action += Update_touch_vector2_variable_ui;
@@ -67,34 +64,14 @@ namespace Logy.Unity_Common_v01
             _input_type_variable_ui.Update_Text(_input_Type.ToString());
         }
 
-        private void Update_inputDonw_variable_ui(bool _inputDonw)
+        private void Update_input_model_variable_ui()
         {
-            _inputDonw_variable_ui.Update_Text(_inputDonw.ToString());
-        }
-
-        private void Update_input_variable_ui(bool _input)
-        {
-            _input_variable_ui.Update_Text(_input.ToString());
-        }
-
-        private void Update_inputUp_variable_ui(bool _inputUp)
-        {
-            _inputUp_variable_ui.Update_Text(_inputUp.ToString());
-        }
-
-        private void Update_input_vector2_variable_ui(Vector2 _input_vector2)
-        {
-            _input_vector2_variable_ui.Update_Text(_input_vector2.ToString());
-        }
-
-        private void Update_input_distance_variable_ui(float _input_distance)
-        {
-            _input_distance_variable_ui.Update_Text(_input_distance.ToString());
-        }
-
-        private void Update_input_radian_variable_ui(float _input_radian)
-        {
-            _input_radian_variable_ui.Update_Text(_input_radian.ToString());
+            _inputDonw_variable_ui.Update_Text(_model.input_model.inputDown.ToString());
+            _input_variable_ui.Update_Text(_model.input_model.input.ToString());
+            _inputUp_variable_ui.Update_Text(_model.input_model.inputUp.ToString());
+            _input_vector2_variable_ui.Update_Text(_model.input_model.input_vector2.ToString());
+            _input_distance_variable_ui.Update_Text(_model.input_model.input_distance.ToString());
+            _input_radian_variable_ui.Update_Text(_model.input_model.input_radian.ToString());
         }
 
         private void Update_start_touch_vector2_variable_ui(Vector2 _start_touch_vector2)

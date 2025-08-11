@@ -8,17 +8,34 @@ namespace Logy.Unity_Common_v01
     [Serializable]
     public class Player_View_TopDown_Presenter : Process
     {
-        [field: SerializeField] public Player_View_TopDown player_view { get; private set; } = new();
+        [field: SerializeField]
+        public Player_View_TopDown player_view { get; private set; } = new();
         private Data _data;
         public struct Data
         {
-            public Input_Model input_model;
+            public Transform parent;
+            public IMove_Model move_model;
             public IStateMachine_TopDown stateMachine;
         }
 
-        public Player_View_TopDown_Presenter() : base(nameof(Player_View_TopDown_Presenter)) { }
+        public Player_View_TopDown_Presenter() : base(nameof(Player_View_TopDown_Presenter)) {}
 
-        public void Set_Reference(Data _data) { this._data = _data; }
+        public async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
+        {
+            await player_view.Variable_Null_Handle(_cancellationToken);
+        }
+
+        public void Set_Reference(Data _data)
+        {
+            this._data = _data;
+
+            Player_View_TopDown.Data player_view_data = new()
+            {
+                parent = _data.parent,
+                move_model = _data.move_model
+            };
+            player_view.Set_Reference(player_view_data);
+        }
 
         protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
         {
@@ -29,9 +46,9 @@ namespace Logy.Unity_Common_v01
 
         private void Add_View_Listener()
         {
-            Add_StateMachine_View_Listener();
+            _data.move_model.Tick_Action += player_view.Update_Animator_Speed;
 
-            _data.input_model.Get_input_distance_Action += player_view.Update_Animator_Speed;
+            Add_StateMachine_View_Listener();
         }
 
         private void Add_StateMachine_View_Listener()

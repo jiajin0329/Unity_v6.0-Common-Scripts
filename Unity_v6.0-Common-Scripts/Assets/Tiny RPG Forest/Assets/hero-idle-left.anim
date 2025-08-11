@@ -34,7 +34,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_FlipX
-    path: 
+    path: Sprite
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -44,7 +44,16 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300000, guid: 21ae12909dfa64464820da55fc494021, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Sprite
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: 2100000, guid: 2dbeaefba7d508743906d4681e3be1c8, type: 2}
+    attribute: 'm_Materials.Array.data[0]'
+    path: Sprite
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -56,7 +65,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 850496168
       attribute: 555744692
       script: {fileID: 0}
       typeID: 212
@@ -65,7 +74,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 850496168
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -73,8 +82,18 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 850496168
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 21
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: 21300000, guid: 21ae12909dfa64464820da55fc494021, type: 3}
+    - {fileID: 2100000, guid: 2dbeaefba7d508743906d4681e3be1c8, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -113,7 +132,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_FlipX
-    path: 
+    path: Sprite
     classID: 212
     script: {fileID: 0}
     flags: 0

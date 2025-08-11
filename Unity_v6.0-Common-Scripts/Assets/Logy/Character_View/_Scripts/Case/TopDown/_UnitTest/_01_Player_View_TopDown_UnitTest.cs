@@ -21,7 +21,7 @@ namespace Logy.Unity_Common_v01
 
             Player_View_TopDown_Presenter.Data _data = new()
             {
-                input_model = _02_Input_Model_UnitTest.model,
+                move_model = _02_Move_Model_UnitTest.model,
                 stateMachine = _02_StateMachine_TopDown_UnitTest.stateMachine,
             };
 

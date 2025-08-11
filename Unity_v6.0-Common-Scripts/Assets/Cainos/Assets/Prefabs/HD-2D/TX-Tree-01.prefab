@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TX-Tree-01
       objectReference: {fileID: 0}
+    - target: {fileID: 4536314684419626068, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536314684419626068, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
+      propertyPath: m_Radius
+      value: 0.19
+      objectReference: {fileID: 0}
     - target: {fileID: 7412654728098886385, guid: 241f81cddd0eb154f911107aaa81ccb9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0

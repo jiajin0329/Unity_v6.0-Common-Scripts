@@ -8,10 +8,10 @@ namespace Logy.Unity_Common_v01
     [Serializable]
     public class Player_View_TopDown
     {
-        [SerializeField] private GameObject _prefab;
+        [SerializeField]
+        private Animator _animator;
         protected virtual string _prefab_name { get; } = "hero";
-        protected Animator _animator;
-
+        private Data _data;
         public Character_View_TopDown[] views = new Character_View_TopDown[StateMachine_TopDown.Index.amount]
         {
             new(),
@@ -20,16 +20,21 @@ namespace Logy.Unity_Common_v01
         public Character_View_TopDown idle_view => views[StateMachine_TopDown.Index.idle];
         public Character_View_TopDown walk_view => views[StateMachine_TopDown.Index.walk];
 
-        public bool is_prefab_is_notNull => _prefab != null;
         public bool is_animator_is_notNull => _animator != null;
+
+        public struct Data
+        {
+            public Transform parent;
+            public IMove_Model move_model;
+        }
+
+        public void Set_Reference(Data _data) { this._data = _data; }
 
         public async UniTask Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
             await Variable_Null_Handle(_cancellationToken);
 
-            GameObject player = UnityEngine.Object.Instantiate(_prefab, Vector3.zero, Quaternion.identity);
-
-            _animator = player.GetComponent<Animator>();
+            _animator = UnityEngine.Object.Instantiate(_animator, _data.parent);
 
             views_Initialize();
 
@@ -38,9 +43,10 @@ namespace Logy.Unity_Common_v01
 
         public async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
         {
-            if (Is.Variable_Null(_prefab, nameof(_prefab)))
+            if (Is.Variable_Null(_animator, nameof(_animator)))
             {
-                _prefab = await UniTaskEX.Addressables_LoadAssetAsync<GameObject>(_prefab_name, _cancellationToken);
+                GameObject _load = await UniTaskEX.Addressables_LoadAssetAsync<GameObject>(_prefab_name, _cancellationToken);
+                _animator = _load.GetComponent<Animator>();
             }
         }
 
@@ -105,21 +111,21 @@ namespace Logy.Unity_Common_v01
             _animator.Play("walk-up");
         }
 
-        public void Update_Animator_Speed(float _input_distance)
+        public void Update_Animator_Speed()
         {
-            if (_input_distance > 0.98f)
+            if (_data.move_model.speed_ratio > 0.98f)
             {
                 _animator.speed = 1f;
                 return;
             }
 
-            if (_input_distance == 0f)
+            if (_data.move_model.speed_ratio == 0f)
             {
                 _animator.speed = 1f;
                 return;
             }
 
-            _animator.speed = _input_distance;
+            _animator.speed = _data.move_model.speed_ratio;
         }
     }
 }

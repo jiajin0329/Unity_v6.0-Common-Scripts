@@ -7,10 +7,10 @@ namespace Logy.Unity_Common_v01
     public class StateMachine_TopDown : StateMachine, IStateMachine_TopDown
     {
         private State_TopDown[] _states;
-
         public IState_TopDown[] sates => _states;
-        private float _input_distance;
-        public bool is_move => _input_distance > 0.2f;
+        public bool is_move => velocity_model.velocity.magnitude > 0f;
+        public IMove_Model velocity_model;
+
         [field: SerializeField] public Direction direction { get; private set; }
 
         public State_TopDown state_idle => _states[Index.idle];
@@ -40,18 +40,15 @@ namespace Logy.Unity_Common_v01
             base.Set_states(_set);
         }
 
-        public void Set_input_distance(float _input_distance)
+        public void Switch_Direction()
         {
-            this._input_distance = _input_distance;
-        }
+            if (!is_move) return;
 
-        public void Switch_Direction(float _input_radian)
-        {
-            if (Is.Radian.Right(_input_radian))
+            if (Is.Radian.Right(velocity_model.move_radian))
                 direction = Direction.right;
-            else if (Is.Radian.Left(_input_radian))
+            else if (Is.Radian.Left(velocity_model.move_radian))
                 direction = Direction.left;
-            else if (Is.Radian.Up(_input_radian))
+            else if (Is.Radian.Up(velocity_model.move_radian))
                 direction = Direction.up;
             else
                 direction = Direction.down;

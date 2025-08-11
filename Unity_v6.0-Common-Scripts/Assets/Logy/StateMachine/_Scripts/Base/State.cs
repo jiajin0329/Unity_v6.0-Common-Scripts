@@ -10,7 +10,7 @@ namespace Logy.Unity_Common_v01
         [field: SerializeField] public string name { get; private set; }
 
         public event UnityAction OnEnter_Action;
-        public event UnityAction Update_Action;
+        public event UnityAction Tick_Action;
         public event UnityAction OnExit_Action;
 
         public State(string _name) { name = _name; }
@@ -18,7 +18,7 @@ namespace Logy.Unity_Common_v01
         public virtual void Initialize()
         {
             OnEnter_Action = null;
-            Update_Action = null;
+            Tick_Action = null;
             OnExit_Action = null;
 
 #if UNITY_EDITOR
@@ -30,7 +30,7 @@ namespace Logy.Unity_Common_v01
         private void Add_Action_Log()
         {
             OnEnter_Action += () => Debug.Log($"{name} {nameof(OnEnter_Action)}");
-            Update_Action += () => Debug.Log($"{name} {nameof(Update_Action)}");
+            Tick_Action += () => Debug.Log($"{name} {nameof(Tick_Action)}");
             OnExit_Action += () => Debug.Log($"{name} {nameof(OnExit_Action)}");
         }
 #endif
@@ -38,7 +38,7 @@ namespace Logy.Unity_Common_v01
         public abstract byte Get_Next_State_Index();
 
         public void OnEnter() { OnEnter_Action?.Invoke(); }
-        public void OnUpdate() { Update_Action?.Invoke(); }
+        public void OnTick() { Tick_Action?.Invoke(); }
         public void OnExit() { OnExit_Action?.Invoke(); }
     }
 }

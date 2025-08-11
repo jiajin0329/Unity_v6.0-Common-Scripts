@@ -15,11 +15,6 @@ namespace Logy.Unity_Common_v01
             model.Initialize();
         }
 
-        public static void Check_Begin()
-        {
-            model.Begin();
-        }
-
         public static void Check_Variable()
         {
             Assert.IsFalse(model.inputDown);

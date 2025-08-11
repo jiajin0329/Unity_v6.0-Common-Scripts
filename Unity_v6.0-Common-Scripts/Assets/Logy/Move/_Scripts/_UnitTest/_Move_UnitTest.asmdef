@@ -1,0 +1,22 @@
+{
+    "name": "Move_UnitTest",
+    "rootNamespace": "",
+    "references": [
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:0acc523941302664db1f4e527237feb3",
+        "GUID:e01cc4d5b7c08d94bbe084b4d4266e73",
+        "GUID:2a1cb0e7085959b419c762e2880f61af",
+        "GUID:f196a334d748c5948a6fcd8b28d32587",
+        "GUID:d91664c2273cea144804b99f8ed7bc6e",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

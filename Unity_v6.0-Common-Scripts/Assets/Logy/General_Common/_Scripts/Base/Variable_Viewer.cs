@@ -40,7 +40,7 @@ namespace Logy.Unity_Common_v01
             await Variable_Null_Handle(_cancellationToken);
         }
 
-        public async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
+        public virtual async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
         {
             if (Is.Variable_Null(_variable_text, nameof(_variable_text)))
             {

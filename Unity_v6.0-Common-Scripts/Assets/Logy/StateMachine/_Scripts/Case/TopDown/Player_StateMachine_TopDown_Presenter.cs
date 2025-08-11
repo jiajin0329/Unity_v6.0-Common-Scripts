@@ -9,19 +9,15 @@ namespace Logy.Unity_Common_v01
         public struct Data
         {
             public StateMachine_TopDown stateMachine;
-            public Input_Model input_model;
+            public IMove_Model move_model;
         }
 
         public void Set_Reference(Data _data) { this._data = _data; }
-        
+
         public void Initialize()
         {
-            _data.input_model.Get_input_distance_Action += _data.stateMachine.Set_input_distance;
-            _data.input_model.Get_input_radian_Action += _data.stateMachine.Switch_Direction;
-
-            _data.input_model.InputDown_Action += _data.stateMachine.Update;
-            _data.input_model.Input_Action += _data.stateMachine.Update;
-            _data.input_model.InputUp_Action += _data.stateMachine.Update;
+            _data.move_model.Tick_Action += _data.stateMachine.Tick;
+            _data.move_model.Tick_Action += _data.stateMachine.Switch_Direction;
         }
     }
 }

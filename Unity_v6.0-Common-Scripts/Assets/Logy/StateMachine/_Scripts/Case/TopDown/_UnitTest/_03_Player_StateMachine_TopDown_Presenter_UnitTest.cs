@@ -19,7 +19,7 @@ namespace Logy.Unity_Common_v01
             Player_StateMachine_TopDown_Presenter.Data _data = new()
             {
                 stateMachine = _02_StateMachine_TopDown_UnitTest.stateMachine,
-                input_model = _02_Input_Model_UnitTest.model,
+                move_model = _02_Move_Model_UnitTest.model,
             };
 
             _presenter.Set_Reference(_data);
