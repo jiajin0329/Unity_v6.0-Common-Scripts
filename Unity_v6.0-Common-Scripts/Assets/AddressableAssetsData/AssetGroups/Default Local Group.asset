@@ -35,6 +35,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7194b8e25a63bc5488aed08f42bd2ecc
+    m_Address: Assets/Bug Pixel Art/Global Volume Profile.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 98193ebe049082d4c95afde5be1af044
     m_Address: Launcher Input Generic TopDown
     m_ReadOnly: 0
