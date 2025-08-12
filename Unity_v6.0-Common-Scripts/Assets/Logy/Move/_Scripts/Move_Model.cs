@@ -70,10 +70,5 @@ namespace Logy.Unity_Common_v01
             _steering = Vector2.ClampMagnitude(_steering, _slowDown_fixedDeltaTime);
             velocity += _steering;
         }
-
-        private bool Velocity_Is_Input_Vector2()
-        {
-            return velocity == _input_model.input_vector2 * speed;
-        }
     }
 }
