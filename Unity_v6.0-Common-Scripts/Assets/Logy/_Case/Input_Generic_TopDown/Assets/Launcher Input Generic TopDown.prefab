@@ -195,7 +195,7 @@ MonoBehaviour:
   _game_data:
     <device>k__BackingField:
       <dpi>k__BackingField: 0
-  _core_input_generic_topDown:
+  _module_input_generic_topDown:
     <process_state>k__BackingField: 0
     _player_input:
       <process_state>k__BackingField: 0
@@ -494,7 +494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3077369785099802996, guid: 0311b3009fcd86e46ae5629246dc5488, type: 3}
       propertyPath: m_Size
-      value: 0.44591346
+      value: 0.4961269
       objectReference: {fileID: 0}
     - target: {fileID: 3077369785099802996, guid: 0311b3009fcd86e46ae5629246dc5488, type: 3}
       propertyPath: m_Value

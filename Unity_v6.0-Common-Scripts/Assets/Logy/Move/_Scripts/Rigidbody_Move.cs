@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Rigidbody_Move : Process
+    public class Rigidbody_Move : Process, IHas_Initialize_With_UniTask, IHas_Tick
     {
         [SerializeField]
         private Rigidbody _rigidbody;
@@ -57,7 +57,7 @@ namespace Logy.Unity_Common_v01
             await _move_variable_viewer.Initialize_With_UniTask(_cancellationToken);
         }
 
-        public void Tick()
+        protected override void Tick_Detail()
         {
             _move_model.Tick();
 

@@ -7,17 +7,17 @@ using UnityEngine;
 
 namespace Logy.Unity_Common_v01
 {
-    public class Launcher_Input_Generic_TopDown : Launcher, IHas_Initialize_With_UniTask, IHas_Begin
+    public class Launcher_Input_Generic_TopDown : Launcher, IHas_Initialize_With_UniTask, IHas_Begin, IHas_Tick
     {
         [SerializeField]
-        private Core_Input_Generic_TopDown _core_input_generic_topDown = new();
-        protected override Core _core => _core_input_generic_topDown;
+        private Module_Input_Generic_TopDown _module_input_generic_topDown = new();
+        protected override Module _module => _module_input_generic_topDown;
 
         public Launcher_Input_Generic_TopDown() : base(nameof(Launcher_Input_Generic_TopDown)) {}
     }
 
     [Serializable]
-    public class Core_Input_Generic_TopDown : Core, IHas_Begin
+    public class Module_Input_Generic_TopDown : Module, IHas_Initialize_With_UniTask, IHas_Begin, IHas_Tick
     {
         [SerializeField]
         private Player_Input_Generic _player_input = new();
@@ -30,9 +30,9 @@ namespace Logy.Unity_Common_v01
         [SerializeField]
         private CinemachineCamera _cinemachineCamera = new();
 
-        public Core_Input_Generic_TopDown() : base(nameof(Core_Input_Generic_TopDown)) { }
+        public Module_Input_Generic_TopDown() : base(nameof(Module_Input_Generic_TopDown)) {}
 
-        public override async UniTask Reset(CancellationToken _cancellationToken)
+        public override async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
         {
             await _player_input.Variable_Null_Handle(_cancellationToken);
             await _player_stateMachine.Variable_Null_Handle(_cancellationToken);
@@ -79,10 +79,8 @@ namespace Logy.Unity_Common_v01
             _player_input.Begin();
         }
 
-        protected override void FixedUpdate_Detail()
+        protected override void Tick_Detail()
         {
-            if (!is_finish) return;
-            
             _rigidbody_move.Tick();
         }
 

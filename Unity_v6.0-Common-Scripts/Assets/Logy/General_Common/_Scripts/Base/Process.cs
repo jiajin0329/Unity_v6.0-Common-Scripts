@@ -13,6 +13,11 @@ namespace Logy.Unity_Common_v01
     {
         [field: SerializeField]
         public Process_State process_state { get; private set; }
+        protected bool _is_has_initialize { get; private set; }
+        protected bool _is_has_initialize_with_uniTask { get; private set; }
+        protected bool _is_has_begin { get; private set; }
+        protected bool _is_has_begin_with_uniTask { get; private set; }
+        protected bool _is_has_tick { get; private set; }
         public bool is_initialized => process_state > Process_State.none;
         public bool is_began => process_state > Process_State.initialized;
         public bool is_finish => process_state > Process_State.began;
@@ -24,16 +29,28 @@ namespace Logy.Unity_Common_v01
             began,
             finish
         }
-        public enum Type : byte
-        {
-            normal,
-            uniTask,
-        }
 
         public Process(string _name) { this._name = _name; }
 
+        private void Check_Structure()
+        {
+            _is_has_initialize = this is IHas_Initialize;
+            _is_has_initialize_with_uniTask = this is IHas_Initialize_With_UniTask;
+            _is_has_begin = this is IHas_Begin;
+            _is_has_begin_with_uniTask = this is IHas_Begin_With_UniTask;
+            _is_has_tick = this is IHas_Tick;
+        }
+
         public void Initialize()
         {
+            Check_Structure();
+
+            if (!_is_has_initialize)
+            {
+                Debug.LogError($"{nameof(IHas_Initialize)} isn't inheritance.");
+                return;
+            }
+
             if (is_initialized)
             {
                 Debug.LogWarning($"{_name} is already {nameof(Process_State.initialized)}.");
@@ -45,7 +62,7 @@ namespace Logy.Unity_Common_v01
 
             Initialize_Detail();
 
-            process_state = this is IHas_Begin or IHas_Initialize_With_UniTask ? Process_State.initialized : Process_State.finish;
+            process_state = this is IHas_Begin or IHas_Begin_With_UniTask ? Process_State.initialized : Process_State.finish;
 
             Debug.Log($"{_name} is {nameof(Process_State.initialized)}.");
         }
@@ -57,6 +74,14 @@ namespace Logy.Unity_Common_v01
 
         public async UniTask Initialize_With_UniTask(CancellationToken _cancellationToken)
         {
+            Check_Structure();
+
+            if (!_is_has_initialize_with_uniTask)
+            {
+                Debug.LogError($"{nameof(IHas_Initialize_With_UniTask)} isn't inheritance.");
+                return;
+            }
+
             if (is_initialized)
             {
                 Debug.LogWarning($"{_name} is already {nameof(Process_State.initialized)}.");
@@ -68,7 +93,7 @@ namespace Logy.Unity_Common_v01
 
             await Initialize_Detail_With_UniTask(_cancellationToken);
 
-            process_state = this is IHas_Begin or IHas_Initialize_With_UniTask ? Process_State.initialized : Process_State.finish;
+            process_state = this is IHas_Begin or IHas_Begin_With_UniTask ? Process_State.initialized : Process_State.finish;
 
             Debug.Log($"{_name} is {nameof(Process_State.initialized)}.");
         }
@@ -81,6 +106,12 @@ namespace Logy.Unity_Common_v01
 
         public void Begin()
         {
+            if (!_is_has_begin)
+            {
+                Debug.LogError($"{nameof(IHas_Begin)} isn't inheritance.");
+                return;
+            }
+
             if (is_began)
             {
                 Debug.LogWarning($"{_name} is already {nameof(Process_State.began)}.");
@@ -101,6 +132,12 @@ namespace Logy.Unity_Common_v01
 
         public async UniTask Begin_With_UniTask(CancellationToken _cancellationToken)
         {
+            if (!!_is_has_begin_with_uniTask)
+            {
+                Debug.LogError($"{nameof(IHas_Begin_With_UniTask)} isn't inheritance.");
+                return;
+            }
+
             if (is_began)
             {
                 Debug.LogWarning($"{_name} is already {nameof(Process_State.began)}.");
@@ -120,14 +157,20 @@ namespace Logy.Unity_Common_v01
             await UniTask.CompletedTask;
         }
 
-        public void FixedUpdate()
+        public void Tick()
         {
-            FixedUpdate_Detail();
+            if (!_is_has_tick)
+            {
+                Debug.LogError($"{nameof(IHas_Tick)} isn't inheritance.");
+                return;
+            }
+
+            Tick_Detail();
         }
 
-        protected virtual void FixedUpdate_Detail()
+        protected virtual void Tick_Detail()
         {
-            Debug.LogError($"{_name} {nameof(FixedUpdate)} isn't implement!");
+            Debug.LogError($"{_name} {nameof(Tick)} isn't implement!");
         }
 
 #if UNITY_EDITOR

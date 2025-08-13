@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Player_StateMachine_TopDown : Process
+    public class Player_StateMachine_TopDown : Process, IHas_Initialize_With_UniTask
     {
         [field: SerializeField] public StateMachine_TopDown stateMachine { get; private set; } = Factory_StateMachine_TopDown.New(Factory_StateMachine_TopDown.Type.player);
         [SerializeField] private Player_StateMachine_TopDown_Presenter _presenter = new();

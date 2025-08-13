@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Player_View_TopDown_Presenter : Process
+    public class Player_View_TopDown_Presenter : Process, IHas_Initialize_With_UniTask
     {
         [field: SerializeField]
         public Player_View_TopDown player_view { get; private set; } = new();

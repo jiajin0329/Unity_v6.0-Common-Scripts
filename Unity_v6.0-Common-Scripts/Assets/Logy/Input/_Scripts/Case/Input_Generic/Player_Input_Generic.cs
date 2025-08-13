@@ -6,7 +6,7 @@ using System.Threading;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Player_Input_Generic : Process, IHas_Begin
+    public class Player_Input_Generic : Process, IHas_Initialize_With_UniTask, IHas_Begin
     {
         public IInput_Generic_Model model => _model;
         [field: SerializeField] public Input_Generic_Model _model { get; private set; } = new();

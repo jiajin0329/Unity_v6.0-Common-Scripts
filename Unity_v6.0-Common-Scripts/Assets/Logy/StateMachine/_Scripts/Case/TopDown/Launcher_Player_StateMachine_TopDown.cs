@@ -8,13 +8,13 @@ namespace Logy.Unity_Common_v01
     public class Launcher_Player_StateMachine_TopDown : Launcher, IHas_Initialize_With_UniTask, IHas_Begin
     {
         [SerializeField] Core_Player_StateMachine_TopDown _core_input_generic_topDown;
-        protected override Core _core => _core_input_generic_topDown;
+        protected override Module _module => _core_input_generic_topDown;
         
         public Launcher_Player_StateMachine_TopDown() : base(nameof(Launcher_Player_StateMachine_TopDown)) {}
     }
 
     [Serializable]
-    public class Core_Player_StateMachine_TopDown : Core, IHas_Begin
+    public class Core_Player_StateMachine_TopDown : Module, IHas_Begin
     {
         [SerializeField] private Player_Input_Generic _player_input;
         [SerializeField] private Rigidbody_Move _rigidbody_move;
@@ -22,7 +22,7 @@ namespace Logy.Unity_Common_v01
 
         public Core_Player_StateMachine_TopDown() : base(nameof(Core_Player_StateMachine_TopDown)) {}
 
-        public override async UniTask Reset(CancellationToken _cancellationToken)
+        public override async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
         {
             await _player_input.Variable_Null_Handle(_cancellationToken);
             await _player_stateMachine.Variable_Null_Handle(_cancellationToken);
