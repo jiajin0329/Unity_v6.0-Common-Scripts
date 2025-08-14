@@ -24,7 +24,7 @@ namespace Logy.Unity_Common_v01
         [SerializeField]
         private Rigidbody_Move _rigidbody_move = new();
         [SerializeField]
-        private Player_StateMachine_TopDown _player_stateMachine = new();
+        private Player_StateMachine_TopDown_Presenter _player_stateMachine = new();
         [SerializeField]
         private Player_View_TopDown_Presenter _player_view_presenter = new();
         [SerializeField]
@@ -77,6 +77,7 @@ namespace Logy.Unity_Common_v01
         protected override void Tick_Detail()
         {
             _rigidbody_move.Tick();
+            _player_stateMachine.Tick();
         }
 
         public override void Cancel()

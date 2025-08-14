@@ -220,16 +220,20 @@ MonoBehaviour:
     _rigidbody_move:
       <process_state>k__BackingField: 0
       _rigidbody: {fileID: 2381057169764958253, guid: 5a124856b4f473b4aab578e454314167, type: 3}
+      _move_model:
+        <velocity>k__BackingField: {x: 0, y: 0}
+        <speed_ratio>k__BackingField: 0
+        <move_radian>k__BackingField: 0
       _move_variable_viewer:
         _variable_text: {fileID: 5413429398007660917}
         _move_image_ui_prefab: {fileID: 243116980161849398, guid: bb4bcc8bdffb5f54b9c94bb9dd6ade4b, type: 3}
     _player_stateMachine:
       <process_state>k__BackingField: 0
-      <stateMachine>k__BackingField:
-        current_state_name: 
+      _stateMachine:
+        <current_state_name>k__BackingField: 
         show_all_state_name: []
         <direction>k__BackingField: 0
-      <variable_viewer>k__BackingField:
+      _variable_viewer:
         _variable_text: {fileID: 5413429398007660917}
     _player_view_presenter:
       <process_state>k__BackingField: 0

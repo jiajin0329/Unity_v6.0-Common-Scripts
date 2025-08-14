@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace Logy.Unity_Common_v01
 {
-    public struct _04_Player_State_TopDown_UnitTest
+    public struct _03_Player_State_TopDown_UnitTest
     {
         private static State_TopDown _state;
 

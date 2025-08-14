@@ -20,12 +20,12 @@ namespace Logy.Unity_Common_v01
 
             _player_state_variable_ui.Initialize("player current state : ", _variable_text);
 
-            _stateMachine.Get_current_state_name_Action += Update_player_state_variable_ui;
+            _stateMachine.Tick_Action += Update_player_state_variable_ui;
         }
 
-        private void Update_player_state_variable_ui(string _current_state_name)
+        private void Update_player_state_variable_ui()
         {
-            _player_state_variable_ui.Update_Text(_current_state_name);
+            _player_state_variable_ui.Update_Text(_stateMachine.current_state_name);
         }
     }
 }

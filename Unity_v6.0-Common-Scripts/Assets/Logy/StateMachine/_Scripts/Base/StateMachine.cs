@@ -10,13 +10,17 @@ namespace Logy.Unity_Common_v01
         protected byte _current_state_index;
         private State[] _states;
 #if DEBUG
-        [SerializeField] private string current_state_name;
-        [SerializeField] private string[] show_all_state_name;
-
-        public event UnityAction<string> Get_current_state_name_Action;
+        [field: SerializeField]
+        public string current_state_name { get; private set; }
+        [SerializeField]
+        private string[] show_all_state_name;
 #endif
 
-        public void Initialize()
+        public event UnityAction Tick_Action;
+
+        public void Set_states(State[] _set) { _states = _set; } 
+
+        public virtual void Initialize()
         {
             Initialize_State();
 
@@ -26,8 +30,6 @@ namespace Logy.Unity_Common_v01
             Initialize_state_names();
 #endif
         }
-
-        public void Set_states(State[] _set) { _states = _set; } 
 
         private void Initialize_State()
         {
@@ -51,8 +53,6 @@ namespace Logy.Unity_Common_v01
         private void Update_current_state_name()
         {
             current_state_name = _states[_current_state_index].name;
-
-            Get_current_state_name_Action?.Invoke(current_state_name);
         }
         
         private void Initialize_state_names()
@@ -70,20 +70,19 @@ namespace Logy.Unity_Common_v01
 
         public void Tick()
         {
-            _states[_current_state_index].OnTick();
-
             byte _next_state_index = _states[_current_state_index].Get_Next_State_Index();
 
-            if (_next_state_index == _current_state_index) return;
+            if (_next_state_index != _current_state_index)
+            {
+                _states[_current_state_index].OnExit();
+                _current_state_index = _next_state_index;
+                _states[_current_state_index].OnEnter();
+            }
 
-            _states[_current_state_index].OnExit();
-
-            _current_state_index = _next_state_index;
-
-            _states[_current_state_index].OnEnter();
             _states[_current_state_index].OnTick();
+            Tick_Action?.Invoke();
 
-#if UNITY_EDITOR
+#if DEBUG
             Update_current_state_name();
 #endif
         }

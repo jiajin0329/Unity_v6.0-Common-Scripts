@@ -3,9 +3,9 @@ using Cysharp.Threading.Tasks;
 
 namespace Logy.Unity_Common_v01
 {
-    public struct _01_Player_StateMachine_TopDown_UnitTest
+    public struct _01_Player_StateMachine_TopDown_Presenter_UnitTest
     {
-        private static Player_StateMachine_TopDown _stateMachine;
+        private static Player_StateMachine_TopDown_Presenter _stateMachine;
 
         public static async UniTask Check_Initialize()
         {
