@@ -11,6 +11,7 @@ namespace Logy.Unity_Common_v01
         [SerializeField]
         private Rigidbody _rigidbody;
         public Transform transform { get; private set; }
+        [SerializeField]
         private Move_Model _move_model = new();
         public IMove_Model move_model => _move_model;
 
