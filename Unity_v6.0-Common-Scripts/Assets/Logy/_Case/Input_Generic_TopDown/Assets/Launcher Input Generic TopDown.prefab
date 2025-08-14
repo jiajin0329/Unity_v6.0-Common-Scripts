@@ -199,25 +199,22 @@ MonoBehaviour:
     <process_state>k__BackingField: 0
     _player_input:
       <process_state>k__BackingField: 0
-      <_model>k__BackingField:
-        <controller_inputAction_generic>k__BackingField:
+      _model:
+        _controller_inputAction_generic:
           _inputActionAsset: {fileID: -944628639613478452, guid: 5536a191df3e3b04aa33d0c6c5bee9f6, type: 3}
-          _input_updater:
-            delay_ms: 0
-          _touch_updater:
-            delay_ms: 0
-        <_input_model>k__BackingField:
+          <input_type>k__BackingField: 0
+        _input_model:
           <inputDown>k__BackingField: 0
           <input>k__BackingField: 0
           <inputUp>k__BackingField: 0
           <input_vector2>k__BackingField: {x: 0, y: 0}
           <input_distance>k__BackingField: 0
           <input_radian>k__BackingField: 0
-        <touch_input_model>k__BackingField:
+        _touch_input_model:
           <start_touch_vector2>k__BackingField: {x: 0, y: 0}
           <touch_vector2>k__BackingField: {x: 0, y: 0}
-        <virtualJoystick_view>k__BackingField:
-          _root_ui: {fileID: 2315728251422970466}
+      <virtualJoystick_view>k__BackingField:
+        _root_ui: {fileID: 2315728251422970466}
       <variable_viewer>k__BackingField:
         _variable_text: {fileID: 5413429398007660917}
     _rigidbody_move:
@@ -494,7 +491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3077369785099802996, guid: 0311b3009fcd86e46ae5629246dc5488, type: 3}
       propertyPath: m_Size
-      value: 0.4961269
+      value: 0.44591346
       objectReference: {fileID: 0}
     - target: {fileID: 3077369785099802996, guid: 0311b3009fcd86e46ae5629246dc5488, type: 3}
       propertyPath: m_Value

@@ -18,11 +18,6 @@ namespace Logy.Unity_Common_v01
             _cancellationTokenSource.Cancel();
         }
 
-        public static void Check_Begin()
-        {
-            _controller_inputAction.Begin();
-        }
-
         public static void Check_Variable()
         {
             Assert.IsTrue(_controller_inputAction.is_inputActionAsset_notNull);

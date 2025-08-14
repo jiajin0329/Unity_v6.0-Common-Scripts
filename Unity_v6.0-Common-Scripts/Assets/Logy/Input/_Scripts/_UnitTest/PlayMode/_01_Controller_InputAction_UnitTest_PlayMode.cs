@@ -13,12 +13,6 @@ namespace Logy.Unity_Common_v01
         }
 
         [Test]
-        public void _02_Check_Begin()
-        {
-            _01_Controller_InputAction_UnitTest.Check_Begin();
-        }
-
-        [Test]
         public void _03_Check_Variable()
         {
             _01_Controller_InputAction_UnitTest.Check_Variable();

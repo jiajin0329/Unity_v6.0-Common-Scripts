@@ -13,12 +13,6 @@ namespace Logy.Unity_Common_v01
         }
 
         [Test]
-        public void _02_Check_Begin()
-        {
-            _02_Input_Generic_Model_UnitTest.Check_Begin();
-        }
-
-        [Test]
         public void _03_Remove_All_inputAction_Listener()
         {
             _02_Input_Generic_Model_UnitTest.Remove_All_inputAction_Listener();

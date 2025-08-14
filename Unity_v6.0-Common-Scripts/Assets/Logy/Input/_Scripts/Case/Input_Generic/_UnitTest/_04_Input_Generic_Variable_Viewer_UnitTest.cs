@@ -5,7 +5,7 @@ using NUnit.Framework;
 
 namespace Logy.Unity_Common_v01
 {
-    public struct _05_Input_Generic_Variable_Viewer_UnitTest
+    public struct _04_Input_Generic_Variable_Viewer_UnitTest
     {
         private static Input_Generic_Variable_Viewer _variable_viewer;
 

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Logy.Unity_Common_v01
 {
-    public class Launcher_Input_Generic_TopDown : Launcher, IHas_Initialize_With_UniTask, IHas_Begin, IHas_Tick
+    public class Launcher_Input_Generic_TopDown : Launcher, IHas_Initialize_With_UniTask, IHas_Tick
     {
         [SerializeField]
         private Module_Input_Generic_TopDown _module_input_generic_topDown = new();
@@ -17,10 +17,10 @@ namespace Logy.Unity_Common_v01
     }
 
     [Serializable]
-    public class Module_Input_Generic_TopDown : Module, IHas_Initialize_With_UniTask, IHas_Begin, IHas_Tick
+    public class Module_Input_Generic_TopDown : Module, IHas_Initialize_With_UniTask, IHas_Tick
     {
         [SerializeField]
-        private Player_Input_Generic _player_input = new();
+        private Player_Input_Generic_Presenter _player_input = new();
         [SerializeField]
         private Rigidbody_Move _rigidbody_move = new();
         [SerializeField]
@@ -28,7 +28,7 @@ namespace Logy.Unity_Common_v01
         [SerializeField]
         private Player_View_TopDown_Presenter _player_view_presenter = new();
         [SerializeField]
-        private CinemachineCamera _cinemachineCamera = new();
+        private CinemachineCamera _cinemachineCamera;
 
         public Module_Input_Generic_TopDown() : base(nameof(Module_Input_Generic_TopDown)) {}
 
@@ -51,7 +51,7 @@ namespace Logy.Unity_Common_v01
 
         private async UniTask _rigidbody_move_Initialize(CancellationToken _cancellationToken)
         {
-            _rigidbody_move.Set_Reference(_player_input._model.input_model);
+            _rigidbody_move.Set_Reference(_player_input.model.input_model);
             await _rigidbody_move.Initialize_With_UniTask(_cancellationToken);
         }
 
@@ -74,11 +74,6 @@ namespace Logy.Unity_Common_v01
             await _player_view_presenter.Initialize_With_UniTask(_cancellationToken);
         }
 
-        protected override void Begin_Detail()
-        {
-            _player_input.Begin();
-        }
-
         protected override void Tick_Detail()
         {
             _rigidbody_move.Tick();
@@ -87,7 +82,7 @@ namespace Logy.Unity_Common_v01
         public override void Cancel()
         {
             //The project has disabled Reload Domain, so Listeners need to be manually removed.
-            _player_input._model.controller_inputAction_generic.Remove_All_inputAction_Listener();
+            _player_input.model.controller.Remove_All_inputAction_Listener();
         }
     }
 }

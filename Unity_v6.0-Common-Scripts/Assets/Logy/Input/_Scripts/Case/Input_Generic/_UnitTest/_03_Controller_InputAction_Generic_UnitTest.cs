@@ -5,7 +5,7 @@ using NUnit.Framework;
 
 namespace Logy.Unity_Common_v01
 {
-    public class _04_Controller_InputAction_Generic_UnitTest
+    public class _03_Controller_InputAction_Generic_UnitTest
     {
         private static Controller_InputAction_Generic _controller_inputAction;
 
@@ -16,11 +16,6 @@ namespace Logy.Unity_Common_v01
             CancellationTokenSource _cancellationTokenSource = new();
             await _controller_inputAction.Initialize_With_UniTask(_cancellationTokenSource.Token);
             _cancellationTokenSource.Cancel();
-        }
-
-        public static void Check_Begin()
-        {
-            _controller_inputAction.Begin();
         }
 
         public static void Check_Variable()
