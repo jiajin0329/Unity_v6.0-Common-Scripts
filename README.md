@@ -8,7 +8,7 @@ Practice design patterns.
 
 Research how to make HD-2D.
 
-Use New Input Systerm.
+Use New Input System.
 
 Use Tilemap and Rule Tiles.
 ## Demo
