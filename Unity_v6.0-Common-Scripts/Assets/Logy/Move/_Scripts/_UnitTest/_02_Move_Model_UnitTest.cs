@@ -9,13 +9,14 @@ namespace Logy.Unity_Common_v01
         public static void Check_Initialize()
         {
             Build_Object();
+
+            model.Initialize();
         }
 
         private static void Build_Object()
         {
             model = new();
             model.Set_Reference(_02_Input_Model_UnitTest.model);
-            model.Initialize();
         }
     }
 }

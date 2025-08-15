@@ -195,44 +195,45 @@ MonoBehaviour:
   _game_data:
     <device>k__BackingField:
       <dpi>k__BackingField: 0
-  _core_input_generic_topDown:
+  _module_input_generic_topDown:
     <process_state>k__BackingField: 0
     _player_input:
       <process_state>k__BackingField: 0
-      <_model>k__BackingField:
-        <controller_inputAction_generic>k__BackingField:
+      _model:
+        _controller_inputAction_generic:
           _inputActionAsset: {fileID: -944628639613478452, guid: 5536a191df3e3b04aa33d0c6c5bee9f6, type: 3}
-          _input_updater:
-            delay_ms: 0
-          _touch_updater:
-            delay_ms: 0
-        <_input_model>k__BackingField:
+          <input_type>k__BackingField: 0
+        _input_model:
           <inputDown>k__BackingField: 0
           <input>k__BackingField: 0
           <inputUp>k__BackingField: 0
           <input_vector2>k__BackingField: {x: 0, y: 0}
           <input_distance>k__BackingField: 0
           <input_radian>k__BackingField: 0
-        <touch_input_model>k__BackingField:
+        _touch_input_model:
           <start_touch_vector2>k__BackingField: {x: 0, y: 0}
           <touch_vector2>k__BackingField: {x: 0, y: 0}
-        <virtualJoystick_view>k__BackingField:
-          _root_ui: {fileID: 2315728251422970466}
+      <virtualJoystick_view>k__BackingField:
+        _root_ui: {fileID: 2315728251422970466}
       <variable_viewer>k__BackingField:
         _variable_text: {fileID: 5413429398007660917}
     _rigidbody_move:
       <process_state>k__BackingField: 0
       _rigidbody: {fileID: 2381057169764958253, guid: 5a124856b4f473b4aab578e454314167, type: 3}
+      _move_model:
+        <velocity>k__BackingField: {x: 0, y: 0}
+        <speed_ratio>k__BackingField: 0
+        <move_radian>k__BackingField: 0
       _move_variable_viewer:
         _variable_text: {fileID: 5413429398007660917}
         _move_image_ui_prefab: {fileID: 243116980161849398, guid: bb4bcc8bdffb5f54b9c94bb9dd6ade4b, type: 3}
     _player_stateMachine:
       <process_state>k__BackingField: 0
-      <stateMachine>k__BackingField:
-        current_state_name: 
+      _stateMachine:
+        <current_state_name>k__BackingField: 
         show_all_state_name: []
         <direction>k__BackingField: 0
-      <variable_viewer>k__BackingField:
+      _variable_viewer:
         _variable_text: {fileID: 5413429398007660917}
     _player_view_presenter:
       <process_state>k__BackingField: 0

@@ -3,11 +3,12 @@ using UnityEngine.Events;
 
 namespace Logy.Unity_Common_v01
 {
-    public interface IInput_Model 
+    public interface IInput_Model
     {
         public bool inputDown { get; }
         public bool input { get; }
         public bool inputUp { get; }
+        public bool is_input => inputDown || input || inputUp;
         public Vector2 input_vector2 { get; }
         public float input_distance { get; }
         public float input_radian { get; }

@@ -7,12 +7,18 @@ namespace Logy.Unity_Common_v01
     [Serializable]
     public class Input_Model : IInput_Model
     {
-        [field: SerializeField] public bool inputDown { get; private set; }
-        [field: SerializeField] public bool input { get; private set; }
-        [field: SerializeField] public bool inputUp { get; private set; }
-        [field: SerializeField] public Vector2 input_vector2 { get; private set; }
-        [field: SerializeField] public float input_distance { get; private set; }
-        [field: SerializeField] public float input_radian { get; private set; }
+        [field: SerializeField]
+        public bool inputDown { get; private set; }
+        [field: SerializeField]
+        public bool input { get; private set; }
+        [field: SerializeField]
+        public bool inputUp { get; private set; }
+        [field: SerializeField]
+        public Vector2 input_vector2 { get; private set; }
+        [field: SerializeField]
+        public float input_distance { get; private set; }
+        [field: SerializeField]
+        public float input_radian { get; private set; }
 
         public event UnityAction InputDown_Action;
         public event UnityAction Input_Action;
