@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 141433446842962275}
   - component: {fileID: 141433446842962268}
   m_Layer: 0
-  m_Name: walk effect
+  m_Name: step_vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -24,6 +24,8 @@ https://github.com/user-attachments/assets/6c8a5471-4800-48e8-bcde-14f17489568c
 [Tiny RPG - Forest](https://assetstore.unity.com/packages/2d/characters/tiny-rpg-forest-114685)
 
 [悠久の絆 by H/MIX GALLERY](http://www.hmix.net/music_gallery/feeling/cures.htm)
+
+[Steps_carpet-014 by Dryoma](https://dryoma.itch.io/footsteps-sounds)
 ## References
 [【開發經驗分享】文章彙整 | 專題系列－《歧路旅人OCTOPATH TRAVELER》](https://indie-guider.games/post/DevStudy-OCTOPATH-TRAVELER/)
 
