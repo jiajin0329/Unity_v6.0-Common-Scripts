@@ -73,59 +73,73 @@ namespace Logy.Unity_Common_v01
 
         private void Idle_Down_View()
         {
-            _animator.Play("idle-down");
+            SwitchAnimation("idle-down");
+        }
+
+        private void SwitchAnimation(string name)
+        {
+            _animator.Play(name, 0, GetNormalizedTime());
+        }
+
+        private float GetNormalizedTime()
+        {
+            return _animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
         }
 
         private void Idle_Left_View()
         {
-            _animator.Play("idle-left");
+            SwitchAnimation("idle-left");
         }
 
         private void Idle_Right_View()
         {
-            _animator.Play("idle-right");
+            SwitchAnimation("idle-right");
         }
 
         private void Idle_Up_View()
         {
-            _animator.Play("idle-up");
+            SwitchAnimation("idle-up");
         }
 
         private void Walk_Down_View()
         {
-            _animator.Play("walk-down");
+            SwitchAnimation("walk-down");
         }
 
         private void Walk_Left_View()
         {
-            _animator.Play("walk-left");
+            SwitchAnimation("walk-left");
         }
 
         private void Walk_Right_View()
         {
-            _animator.Play("walk-right");
+            SwitchAnimation("walk-right");
         }
 
         private void Walk_Up_View()
         {
-            _animator.Play("walk-up");
+            SwitchAnimation("walk-up");
         }
 
-        public void Update_Animator_Speed()
+        public void Tikc()
         {
-            if (_data.move_model.speed_ratio > 0.98f)
-            {
-                _animator.speed = 1f;
-                return;
-            }
+            Update_Animator_Speed();
+        }
 
-            if (_data.move_model.speed_ratio == 0f)
+        private void Update_Animator_Speed()
+        {
+            switch (_data.move_model.speed_ratio)
             {
-                _animator.speed = 1f;
-                return;
+                case > 0.98f:
+                    _animator.speed = 1f;
+                    break;
+                case 0f:
+                    _animator.speed = 1f;
+                    break;
+                default:
+                    _animator.speed = _data.move_model.speed_ratio;
+                    break;
             }
-
-            _animator.speed = _data.move_model.speed_ratio;
         }
     }
 }

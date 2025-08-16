@@ -46,7 +46,7 @@ namespace Logy.Unity_Common_v01
 
         private void Add_View_Listener()
         {
-            _data.move_model.Tick_Action += player_view.Update_Animator_Speed;
+            _data.move_model.Tick_Action += player_view.Tikc;
 
             Add_StateMachine_View_Listener();
         }
