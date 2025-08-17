@@ -1,5 +1,5 @@
 {
-    "name": "Input_Generic_TopDown",
+    "name": "InputGenericTopDown",
     "rootNamespace": "",
     "references": [
         "GUID:e01cc4d5b7c08d94bbe084b4d4266e73",

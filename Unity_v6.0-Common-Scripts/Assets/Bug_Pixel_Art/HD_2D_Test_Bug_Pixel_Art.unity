@@ -257,6 +257,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3588210946357100952, guid: 175a02de19c8c7249904d1ad9587f931, type: 3}
   m_PrefabInstance: {fileID: 24456986}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &27301744
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 345128017}
+    m_Modifications:
+    - target: {fileID: 2463503881910057555, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+      propertyPath: m_Name
+      value: tx-props-statue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814003854146959871, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814003854146959871, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814003854146959871, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814003854146959871, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814003854146959871, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814003854146959871, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814003854146959871, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814003854146959871, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814003854146959871, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814003854146959871, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+--- !u!4 &27301745 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6814003854146959871, guid: be8d6c4539218ca47821a24196b88aa1, type: 3}
+  m_PrefabInstance: {fileID: 27301744}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &30681679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1297,6 +1359,7 @@ Transform:
   - {fileID: 1274922410}
   - {fileID: 703165095}
   - {fileID: 433077251}
+  - {fileID: 27301745}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &348389750
@@ -71121,7 +71184,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2e950c51a40e19f4f82cce91a8b60205, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -71644,7 +71707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4268082998067748776, guid: 98193ebe049082d4c95afde5be1af044, type: 3}
       propertyPath: m_Name
-      value: Launcher Input Generic TopDown
+      value: Launcher_Input_Generic_TopDown
       objectReference: {fileID: 0}
     - target: {fileID: 4371389008129620609, guid: 98193ebe049082d4c95afde5be1af044, type: 3}
       propertyPath: m_IsActive
@@ -71751,9 +71814,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8162085063293912961, guid: 98193ebe049082d4c95afde5be1af044, type: 3}
+      propertyPath: _moduleInputGenericTopDown._cinemachineCamera
+      value: 
+      objectReference: {fileID: 1844151586}
+    - target: {fileID: 8162085063293912961, guid: 98193ebe049082d4c95afde5be1af044, type: 3}
       propertyPath: _core_input_generic_topDown._cinemachineCamera
       value: 
       objectReference: {fileID: 1844151586}
+    - target: {fileID: 8162085063293912961, guid: 98193ebe049082d4c95afde5be1af044, type: 3}
+      propertyPath: _module_input_generic_topDown._cinemachineCamera
+      value: 
+      objectReference: {fileID: 1844151586}
+    - target: {fileID: 8162085063293912961, guid: 98193ebe049082d4c95afde5be1af044, type: 3}
+      propertyPath: _moduleInputGenericTopDown._playerView.<player_view>k__BackingField._animator
+      value: 
+      objectReference: {fileID: 1513844985799887200, guid: a3e7b759c63ecf746ac9ffa5959b3656, type: 3}
+    - target: {fileID: 8162085063293912961, guid: 98193ebe049082d4c95afde5be1af044, type: 3}
+      propertyPath: _core_input_generic_topDown._player_view_presenter.<player_view>k__BackingField._animator
+      value: 
+      objectReference: {fileID: 1513844985799887200, guid: a3e7b759c63ecf746ac9ffa5959b3656, type: 3}
+    - target: {fileID: 8162085063293912961, guid: 98193ebe049082d4c95afde5be1af044, type: 3}
+      propertyPath: _module_input_generic_topDown._player_view_presenter.<player_view>k__BackingField._animator
+      value: 
+      objectReference: {fileID: 1513844985799887200, guid: a3e7b759c63ecf746ac9ffa5959b3656, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
