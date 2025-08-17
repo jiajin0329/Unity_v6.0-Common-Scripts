@@ -45,7 +45,7 @@ namespace Logy.UnityCommonV01
         {
             if (Is.VariableNull(_animator, nameof(_animator)))
             {
-                GameObject _load = await UniTaskEX.Addressables_LoadAssetAsync<GameObject>(_prefabName, _cancellationToken);
+                GameObject _load = await UniTaskEX.AddressablesLoadAssetAsync<GameObject>(_prefabName, _cancellationToken);
                 _animator = _load.GetComponent<Animator>();
             }
         }

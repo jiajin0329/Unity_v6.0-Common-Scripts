@@ -20,7 +20,7 @@ namespace Logy.UnityCommonV01
             }
         }
 
-        public static async UniTask<T> Addressables_LoadAssetAsync<T>(string _fileName, CancellationToken _cancellationToken)
+        public static async UniTask<T> AddressablesLoadAssetAsync<T>(string _fileName, CancellationToken _cancellationToken)
         {
             AsyncOperationHandle<T> _handle = Addressables.LoadAssetAsync<T>(_fileName);
             await _handle.ToUniTask(cancellationToken: _cancellationToken);

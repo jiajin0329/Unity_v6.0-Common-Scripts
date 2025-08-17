@@ -53,7 +53,7 @@ namespace Logy.UnityCommonV01
 
             if (Is.VariableNull(_move_image_ui_prefab, nameof(_move_image_ui_prefab)))
             {
-                GameObject _gameObject = await UniTaskEX.Addressables_LoadAssetAsync<GameObject>("Move_Image_UI", _cancellationToken);
+                GameObject _gameObject = await UniTaskEX.AddressablesLoadAssetAsync<GameObject>("Move_Image_UI", _cancellationToken);
                 _move_image_ui_prefab = _gameObject.GetComponent<RectTransform>();
             }
         }

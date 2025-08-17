@@ -40,7 +40,7 @@ namespace Logy.UnityCommonV01
         {
             if (Is.VariableNull(_rigidbody, nameof(_rigidbody)))
             {
-                GameObject _load = await UniTaskEX.Addressables_LoadAssetAsync<GameObject>("Rigidbody", _cancellationToken);
+                GameObject _load = await UniTaskEX.AddressablesLoadAssetAsync<GameObject>("Rigidbody", _cancellationToken);
                 _rigidbody = _load.GetComponent<Rigidbody>();
             }
 

@@ -55,7 +55,7 @@ namespace Logy.UnityCommonV01
 
         private static async UniTask<RectTransform> Instantiate_VirtualJoystick_View_UI(CancellationToken _cancellationToken)
         {
-            GameObject _prefab = await UniTaskEX.Addressables_LoadAssetAsync<GameObject>("VirtualJoystick View UI", _cancellationToken);
+            GameObject _prefab = await UniTaskEX.AddressablesLoadAssetAsync<GameObject>("VirtualJoystick View UI", _cancellationToken);
 
             return GameObject.Instantiate(_prefab.GetComponent<RectTransform>()); ;
         }

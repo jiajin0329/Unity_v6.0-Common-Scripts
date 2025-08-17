@@ -34,7 +34,7 @@ namespace Logy.UnityCommonV01
         {
             if (Is.VariableNull(_inputActionAsset, nameof(_inputActionAsset)))
             {
-                _inputActionAsset = await UniTaskEX.Addressables_LoadAssetAsync<InputActionAsset>("InputSystem Actions", _cancellationToken);
+                _inputActionAsset = await UniTaskEX.AddressablesLoadAssetAsync<InputActionAsset>("InputSystem Actions", _cancellationToken);
             }
         }
 
