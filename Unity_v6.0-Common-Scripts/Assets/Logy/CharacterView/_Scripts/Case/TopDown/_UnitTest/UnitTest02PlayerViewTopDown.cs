@@ -5,16 +5,16 @@ using Cysharp.Threading.Tasks;
 
 namespace Logy.Unity_Common_v01
 {
-    public struct _02_Player_View_TopDown_UnitTest
+    public struct UnitTest02PlayerViewTopDown
     {
-        private static Player_View_TopDown _view;
+        private static PlayerViewTopDown _view;
 
-        public static async UniTask Check_Initialize()
+        public static async UniTask CheckInitialize()
         {
             _view = new();
 
             CancellationTokenSource _cancellationTokenSource = new();
-            await _view.Initialize_With_UniTask(_cancellationTokenSource.Token);
+            await _view.InitializeWithUniTask(_cancellationTokenSource.Token);
             _cancellationTokenSource.Cancel();
         }
     }

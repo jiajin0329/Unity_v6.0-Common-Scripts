@@ -6,21 +6,21 @@ using UnityEngine;
 namespace Logy.Unity_Common_v01
 {
     [Serializable]
-    public class Player_View_TopDown
+    public class PlayerViewTopDown
     {
         [SerializeField]
         private Animator _animator;
-        protected virtual string _prefab_name { get; } = "hero";
+        protected virtual string _prefabName { get; } = "hero";
         private Data _data;
-        public Character_View_TopDown[] views = new Character_View_TopDown[StateMachine_TopDown.Index.amount]
+        public CharacterViewTopDown[] views = new CharacterViewTopDown[StateMachine_TopDown.Index.amount]
         {
             new(),
             new()
         };
-        public Character_View_TopDown idle_view => views[StateMachine_TopDown.Index.idle];
-        public Character_View_TopDown walk_view => views[StateMachine_TopDown.Index.walk];
+        public CharacterViewTopDown idleView => views[StateMachine_TopDown.Index.idle];
+        public CharacterViewTopDown walkView => views[StateMachine_TopDown.Index.walk];
 
-        public bool is_animator_is_notNull => _animator != null;
+        public bool isAnimatorNotNull => _animator != null;
 
         public struct Data
         {
@@ -28,29 +28,29 @@ namespace Logy.Unity_Common_v01
             public IMove_Model move_model;
         }
 
-        public void Set_Reference(Data _data) { this._data = _data; }
+        public void SetReference(Data _data) { this._data = _data; }
 
-        public async UniTask Initialize_With_UniTask(CancellationToken _cancellationToken)
+        public async UniTask InitializeWithUniTask(CancellationToken _cancellationToken)
         {
-            await Variable_Null_Handle(_cancellationToken);
+            await VariableNullHandle(_cancellationToken);
 
             _animator = UnityEngine.Object.Instantiate(_animator, _data.parent);
 
-            views_Initialize();
+            ViewsInitialize();
 
-            Add_View_Listener();
+            AddViewListener();
         }
 
-        public async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
+        public async UniTask VariableNullHandle(CancellationToken _cancellationToken)
         {
             if (Is.Variable_Null(_animator, nameof(_animator)))
             {
-                GameObject _load = await UniTaskEX.Addressables_LoadAssetAsync<GameObject>(_prefab_name, _cancellationToken);
+                GameObject _load = await UniTaskEX.Addressables_LoadAssetAsync<GameObject>(_prefabName, _cancellationToken);
                 _animator = _load.GetComponent<Animator>();
             }
         }
 
-        private void views_Initialize()
+        private void ViewsInitialize()
         {
             for (byte i = 0; i < views.Length; i++)
             {
@@ -58,20 +58,20 @@ namespace Logy.Unity_Common_v01
             }
         }
 
-        private void Add_View_Listener()
+        private void AddViewListener()
         {
-            idle_view.Down_View_Action += Idle_Down_View;
-            idle_view.Left_View_Action += Idle_Left_View;
-            idle_view.Right_View_Action += Idle_Right_View;
-            idle_view.Up_View_Action += Idle_Up_View;
+            idleView.DownViewAction += IdleDownView;
+            idleView.LeftViewAction += IdleLeftView;
+            idleView.RightViewAction += IdleRightView;
+            idleView.UpViewAction += IdleUpView;
 
-            walk_view.Down_View_Action += Walk_Down_View;
-            walk_view.Left_View_Action += Walk_Left_View;
-            walk_view.Right_View_Action += Walk_Right_View;
-            walk_view.Up_View_Action += Walk_Up_View;
+            walkView.DownViewAction += WalkDownView;
+            walkView.LeftViewAction += WalkLeftView;
+            walkView.RightViewAction += WalkRightView;
+            walkView.UpViewAction += WalkUpView;
         }
 
-        private void Idle_Down_View()
+        private void IdleDownView()
         {
             SwitchAnimation("idle-down");
         }
@@ -86,47 +86,47 @@ namespace Logy.Unity_Common_v01
             return _animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
         }
 
-        private void Idle_Left_View()
+        private void IdleLeftView()
         {
             SwitchAnimation("idle-left");
         }
 
-        private void Idle_Right_View()
+        private void IdleRightView()
         {
             SwitchAnimation("idle-right");
         }
 
-        private void Idle_Up_View()
+        private void IdleUpView()
         {
             SwitchAnimation("idle-up");
         }
 
-        private void Walk_Down_View()
+        private void WalkDownView()
         {
             SwitchAnimation("walk-down");
         }
 
-        private void Walk_Left_View()
+        private void WalkLeftView()
         {
             SwitchAnimation("walk-left");
         }
 
-        private void Walk_Right_View()
+        private void WalkRightView()
         {
             SwitchAnimation("walk-right");
         }
 
-        private void Walk_Up_View()
+        private void WalkUpView()
         {
             SwitchAnimation("walk-up");
         }
 
         public void Tikc()
         {
-            Update_Animator_Speed();
+            UpdateAnimatorSpeed();
         }
 
-        private void Update_Animator_Speed()
+        private void UpdateAnimatorSpeed()
         {
             switch (_data.move_model.speed_ratio)
             {

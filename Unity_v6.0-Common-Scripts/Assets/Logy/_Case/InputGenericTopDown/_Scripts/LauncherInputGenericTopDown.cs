@@ -26,7 +26,7 @@ namespace Logy.Unity_Common_v01
         [SerializeField]
         private Player_StateMachine_TopDown_Presenter _playerStateMachine = new();
         [SerializeField]
-        private Player_View_TopDown_Presenter _playerView = new();
+        private PlayerViewTopDownPresenter _playerView = new();
         [SerializeField]
         private CinemachineCamera _cinemachineCamera;
         [SerializeField]
@@ -40,7 +40,7 @@ namespace Logy.Unity_Common_v01
             await _playerInput.Variable_Null_Handle(_cancellationToken);
             await _playerStateMachine.Variable_Null_Handle(_cancellationToken);
             await _rigidbodyMove.Variable_Null_Handle(_cancellationToken);
-            await _playerView.Variable_Null_Handle(_cancellationToken);
+            await _playerView.VariableNullHandle(_cancellationToken);
         }
 
         protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
@@ -68,14 +68,14 @@ namespace Logy.Unity_Common_v01
 
         private async UniTask PlayerViewTopDownInitializeWithUniTask(CancellationToken _cancellationToken)
         {
-            Player_View_TopDown_Presenter.Data _data = new()
+            PlayerViewTopDownPresenter.Data _data = new()
             {
                 parent = _rigidbodyMove.transform,
-                move_model = _rigidbodyMove.move_model,
+                moveModel = _rigidbodyMove.move_model,
                 stateMachine = _playerStateMachine.stateMachine,
             };
 
-            _playerView.Set_Reference(_data);
+            _playerView.SetReference(_data);
             await _playerView.Initialize_With_UniTask(_cancellationToken);
         }
 

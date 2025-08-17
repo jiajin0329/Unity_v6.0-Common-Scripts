@@ -1,10 +1,10 @@
 {
-    "name": "_05_1_Character_View_TopDown_UnitTest_PlayMode",
+    "name": "UnitTestPlayMode05_1CharacterViewTopDown",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Character_View_TopDown_UnitTest",
+        "UnitTestCharacterViewTopDown",
         "UniTask"
     ],
     "includePlatforms": [],
