@@ -1,6 +1,6 @@
 using System;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     [Serializable]
     public struct Factory_StateMachine_TopDown

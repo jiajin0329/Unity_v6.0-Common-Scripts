@@ -1,6 +1,6 @@
 using UnityEngine.Events;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     public class State_TopDown : State, IState_TopDown
     {

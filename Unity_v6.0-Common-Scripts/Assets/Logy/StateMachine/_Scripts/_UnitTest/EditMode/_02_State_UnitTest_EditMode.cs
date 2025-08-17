@@ -1,7 +1,7 @@
 #if UNITY_EDITOR
 using NUnit.Framework;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     public class _02_State_UnitTest_EditMode
     {

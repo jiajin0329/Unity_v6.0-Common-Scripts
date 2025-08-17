@@ -3,10 +3,10 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     [Serializable]
-    public class Player_StateMachine_TopDown_Presenter : Process, IHas_Initialize_With_UniTask, IHas_Tick
+    public class Player_StateMachine_TopDown_Presenter : Process, IHasInitializeWithUniTask, IHasTick
     {
         [field: SerializeField]
         private StateMachine_TopDown _stateMachine = Factory_StateMachine_TopDown.New(Factory_StateMachine_TopDown.Type.player);
@@ -21,7 +21,7 @@ namespace Logy.Unity_Common_v01
         public async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
         {
 #if DEBUG
-            await _variable_viewer.Variable_Null_Handle(_cancellationToken);
+            await _variable_viewer.VariableNullHandle(_cancellationToken);
 #endif
             await UniTask.CompletedTask;
         }
@@ -35,17 +35,17 @@ namespace Logy.Unity_Common_v01
 #endif  
         }
 
-        protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
+        protected override async UniTask InitializeDetailWithUniTask(CancellationToken _cancellationToken)
         {
             _stateMachine.Initialize();
 
 #if DEBUG
-            await _variable_viewer.Initialize_With_UniTask(_cancellationToken);
+            await _variable_viewer.InitializeWithUniTask(_cancellationToken);
 #endif
             await UniTask.CompletedTask;
         }
 
-        protected override void Tick_Detail()
+        protected override void TickDetail()
         {
             _stateMachine.Tick();
         }

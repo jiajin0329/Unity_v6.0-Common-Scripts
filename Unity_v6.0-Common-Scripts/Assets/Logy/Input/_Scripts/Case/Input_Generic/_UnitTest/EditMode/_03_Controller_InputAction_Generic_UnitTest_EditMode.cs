@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     public class _03_Controller_InputAction_Generic_UnitTest_EditMode
     {

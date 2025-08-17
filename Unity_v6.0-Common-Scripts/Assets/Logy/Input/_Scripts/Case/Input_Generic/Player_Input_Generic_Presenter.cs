@@ -3,10 +3,10 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     [Serializable]
-    public class Player_Input_Generic_Presenter : Process, IHas_Initialize_With_UniTask, IHas_Tick
+    public class Player_Input_Generic_Presenter : Process, IHasInitializeWithUniTask, IHasTick
     {
         [SerializeField]
         private Player_Input_Generic_Model _model = new();
@@ -27,11 +27,11 @@ namespace Logy.Unity_Common_v01
             await virtualJoystick_view.Variable_Null_Handle(_cancellationToken);
 
 #if DEBUG
-            await variable_viewer.Variable_Null_Handle(_cancellationToken);
+            await variable_viewer.VariableNullHandle(_cancellationToken);
 #endif
         }
 
-        protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
+        protected override async UniTask InitializeDetailWithUniTask(CancellationToken _cancellationToken)
         {
             await _model.Initialize_With_UniTask(_cancellationToken);
 
@@ -42,7 +42,7 @@ namespace Logy.Unity_Common_v01
 
 #if DEBUG
             variable_viewer.Set_Reference(_model);
-            await variable_viewer.Initialize_With_UniTask(_cancellationToken);
+            await variable_viewer.InitializeWithUniTask(_cancellationToken);
 #endif
         }
 

@@ -3,7 +3,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     [Serializable]
     public class PlayerViewTopDown
@@ -43,7 +43,7 @@ namespace Logy.Unity_Common_v01
 
         public async UniTask VariableNullHandle(CancellationToken _cancellationToken)
         {
-            if (Is.Variable_Null(_animator, nameof(_animator)))
+            if (Is.VariableNull(_animator, nameof(_animator)))
             {
                 GameObject _load = await UniTaskEX.Addressables_LoadAssetAsync<GameObject>(_prefabName, _cancellationToken);
                 _animator = _load.GetComponent<Animator>();

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     [Serializable]
     public abstract class State : IState

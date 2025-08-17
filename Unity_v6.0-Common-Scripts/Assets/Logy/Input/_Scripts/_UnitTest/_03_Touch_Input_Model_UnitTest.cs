@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using UnityEngine;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     public struct _03_Touch_Input_Model_UnitTest
     {

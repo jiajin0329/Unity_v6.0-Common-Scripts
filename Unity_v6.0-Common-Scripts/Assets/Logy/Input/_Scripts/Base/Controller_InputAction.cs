@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     [Serializable]
     public class Controller_InputAction : IController_InputAction
@@ -32,7 +32,7 @@ namespace Logy.Unity_Common_v01
 
         public async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
         {
-            if (Is.Variable_Null(_inputActionAsset, nameof(_inputActionAsset)))
+            if (Is.VariableNull(_inputActionAsset, nameof(_inputActionAsset)))
             {
                 _inputActionAsset = await UniTaskEX.Addressables_LoadAssetAsync<InputActionAsset>("InputSystem Actions", _cancellationToken);
             }

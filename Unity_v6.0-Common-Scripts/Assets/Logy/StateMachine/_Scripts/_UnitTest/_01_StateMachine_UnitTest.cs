@@ -1,5 +1,5 @@
 #if UNITY_EDITOR
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     public struct _01_StateMachine_UnitTest
     {

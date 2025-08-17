@@ -3,7 +3,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using NUnit.Framework;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     public struct _04_VirtualJoystick_View_UnitTest
     {

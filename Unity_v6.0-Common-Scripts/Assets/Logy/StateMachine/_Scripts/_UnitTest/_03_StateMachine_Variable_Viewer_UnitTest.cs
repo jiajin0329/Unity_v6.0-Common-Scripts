@@ -3,7 +3,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using NUnit.Framework;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     public struct _03_StateMachine_Variable_Viewer_UnitTest
     {
@@ -15,13 +15,13 @@ namespace Logy.Unity_Common_v01
             _variable_viewer.Set_Reference(_01_StateMachine_UnitTest.stateMachine);
 
             CancellationTokenSource _cancellationTokenSource = new();
-            await _variable_viewer.Initialize_With_UniTask(_cancellationTokenSource.Token);
+            await _variable_viewer.InitializeWithUniTask(_cancellationTokenSource.Token);
             _cancellationTokenSource.Cancel();
         }
         
         public static void Check_Variable()
         {
-            Assert.IsTrue(_variable_viewer.is_variable_text_notNull);
+            Assert.IsTrue(_variable_viewer.isVariableTextNotNull);
         }
     }
 }

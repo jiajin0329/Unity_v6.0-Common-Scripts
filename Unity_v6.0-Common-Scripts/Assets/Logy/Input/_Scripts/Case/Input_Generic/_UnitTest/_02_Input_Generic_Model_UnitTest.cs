@@ -2,7 +2,7 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     public struct _02_Input_Generic_Model_UnitTest
     {

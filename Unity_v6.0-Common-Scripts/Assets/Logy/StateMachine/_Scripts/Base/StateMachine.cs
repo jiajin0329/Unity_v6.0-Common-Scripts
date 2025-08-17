@@ -2,7 +2,7 @@ using System;
 using UnityEngine.Events;
 using UnityEngine;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     [Serializable]
     public class StateMachine : IStateMachine

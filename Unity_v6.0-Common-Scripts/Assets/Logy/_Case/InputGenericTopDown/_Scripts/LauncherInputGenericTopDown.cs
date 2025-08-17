@@ -5,9 +5,9 @@ using Cysharp.Threading.Tasks;
 using Unity.Cinemachine;
 using UnityEngine;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
-    public class LauncherInputGenericTopDown : Launcher, IHas_Initialize_With_UniTask, IHas_Tick
+    public class LauncherInputGenericTopDown : Launcher, IHasInitializeWithUniTask, IHasTick
     {
         [SerializeField]
         private ModuleInputGenericTopDown _moduleInputGenericTopDown = new();
@@ -17,7 +17,7 @@ namespace Logy.Unity_Common_v01
     }
 
     [Serializable]
-    public class ModuleInputGenericTopDown : Module, IHas_Initialize_With_UniTask, IHas_Tick
+    public class ModuleInputGenericTopDown : Module, IHasInitializeWithUniTask, IHasTick
     {
         [SerializeField]
         private Player_Input_Generic_Presenter _playerInput = new();
@@ -31,11 +31,13 @@ namespace Logy.Unity_Common_v01
         private CinemachineCamera _cinemachineCamera;
         [SerializeField]
         private ParticleSystem _ambientGlowsFx;
+        [SerializeField]
+        private UI _ui = new();
         
 
         public ModuleInputGenericTopDown() : base(nameof(ModuleInputGenericTopDown)) { }
 
-        public override async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
+        public override async UniTask VariableNullHandle(CancellationToken _cancellationToken)
         {
             await _playerInput.Variable_Null_Handle(_cancellationToken);
             await _playerStateMachine.Variable_Null_Handle(_cancellationToken);
@@ -43,27 +45,27 @@ namespace Logy.Unity_Common_v01
             await _playerView.VariableNullHandle(_cancellationToken);
         }
 
-        protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
+        protected override async UniTask InitializeDetailWithUniTask(CancellationToken _cancellationToken)
         {
-            await _playerInput.Initialize_With_UniTask(_cancellationToken);
+            await _playerInput.InitializeWithUniTask(_cancellationToken);
             await RigidbodyMoveInitialize(_cancellationToken);
             await PlyaerStateMachineInitializeWithUniTask(_cancellationToken);
             await PlayerViewTopDownInitializeWithUniTask(_cancellationToken);
             _cinemachineCamera.Follow = _rigidbodyMove.transform;
-
             UnityEngine.Object.Instantiate(_ambientGlowsFx, _rigidbodyMove.transform);
+            _ui.Initialize();
         }
 
         private async UniTask RigidbodyMoveInitialize(CancellationToken _cancellationToken)
         {
             _rigidbodyMove.Set_Reference(_playerInput.model.input_model);
-            await _rigidbodyMove.Initialize_With_UniTask(_cancellationToken);
+            await _rigidbodyMove.InitializeWithUniTask(_cancellationToken);
         }
 
         private async UniTask PlyaerStateMachineInitializeWithUniTask(CancellationToken _cancellationToken)
         {
             _playerStateMachine.Set_Reference(_rigidbodyMove.move_model);
-            await _playerStateMachine.Initialize_With_UniTask(_cancellationToken);
+            await _playerStateMachine.InitializeWithUniTask(_cancellationToken);
         }
 
         private async UniTask PlayerViewTopDownInitializeWithUniTask(CancellationToken _cancellationToken)
@@ -76,10 +78,10 @@ namespace Logy.Unity_Common_v01
             };
 
             _playerView.SetReference(_data);
-            await _playerView.Initialize_With_UniTask(_cancellationToken);
+            await _playerView.InitializeWithUniTask(_cancellationToken);
         }
 
-        protected override void Tick_Detail()
+        protected override void TickDetail()
         {
             _rigidbodyMove.Tick();
             _playerStateMachine.Tick();

@@ -1,4 +1,4 @@
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     public interface IStateMachine_TopDown : IStateMachine
     {

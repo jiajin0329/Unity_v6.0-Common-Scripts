@@ -1,7 +1,7 @@
 #if UNITY_EDITOR
 using Cysharp.Threading.Tasks;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     public struct _01_Rigidbody_Move_UnitTest
     {
@@ -11,7 +11,7 @@ namespace Logy.Unity_Common_v01
         {
             Build_Object();
 
-            await Process.Check_Initialize_With_UniTask(_rigidbody_move);
+            await Process.CheckInitializeWithUniTask(_rigidbody_move);
         }
 
         private static void Build_Object()

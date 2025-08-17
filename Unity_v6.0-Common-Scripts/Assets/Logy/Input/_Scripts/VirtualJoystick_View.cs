@@ -3,7 +3,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     [Serializable]
     public class VirtualJoystick_View
@@ -41,11 +41,11 @@ namespace Logy.Unity_Common_v01
 
         public async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
         {
-            if (Is.Variable_Null(_root_ui, nameof(_root_ui)))
+            if (Is.VariableNull(_root_ui, nameof(_root_ui)))
             {
-                if (Launcher.launcher_transform != null)
+                if (Launcher.launcherTransform != null)
                 {
-                    _root_ui = Launcher.launcher_transform.Find("Canvas/VirtualJoystick View UI").GetComponent<RectTransform>();
+                    _root_ui = Launcher.launcherTransform.Find("Canvas/VirtualJoystick View UI").GetComponent<RectTransform>();
                     return;
                 }
 

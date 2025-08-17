@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     [Serializable]
     public class Input_Model : IInput_Model
@@ -85,7 +85,7 @@ namespace Logy.Unity_Common_v01
         {
             if (input_vector2 != Vector2.zero)
             {
-                input_radian = Convert.Vector2_To_Radian(input_vector2);
+                input_radian = Convert.Vector2ToRadian(input_vector2);
             }
         }
     }

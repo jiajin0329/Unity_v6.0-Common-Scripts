@@ -3,10 +3,10 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     [Serializable]
-    public class PlayerViewTopDownPresenter : Process, IHas_Initialize_With_UniTask
+    public class PlayerViewTopDownPresenter : Process, IHasInitializeWithUniTask
     {
         [field: SerializeField]
         public PlayerViewTopDown playerView { get; private set; } = new();
@@ -37,7 +37,7 @@ namespace Logy.Unity_Common_v01
             playerView.SetReference(player_view_data);
         }
 
-        protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
+        protected override async UniTask InitializeDetailWithUniTask(CancellationToken _cancellationToken)
         {
             await playerView.InitializeWithUniTask(_cancellationToken);
 

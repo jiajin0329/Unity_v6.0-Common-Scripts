@@ -3,10 +3,10 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     [Serializable]
-    public class Rigidbody_Move : Process, IHas_Initialize_With_UniTask, IHas_Tick
+    public class Rigidbody_Move : Process, IHasInitializeWithUniTask, IHasTick
     {
         [SerializeField]
         private Rigidbody _rigidbody;
@@ -38,16 +38,16 @@ namespace Logy.Unity_Common_v01
 
         public async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
         {
-            if (Is.Variable_Null(_rigidbody, nameof(_rigidbody)))
+            if (Is.VariableNull(_rigidbody, nameof(_rigidbody)))
             {
                 GameObject _load = await UniTaskEX.Addressables_LoadAssetAsync<GameObject>("Rigidbody", _cancellationToken);
                 _rigidbody = _load.GetComponent<Rigidbody>();
             }
 
-            await _move_variable_viewer.Variable_Null_Handle(_cancellationToken);
+            await _move_variable_viewer.VariableNullHandle(_cancellationToken);
         }
 
-        protected override async UniTask Initialize_Detail_With_UniTask(CancellationToken _cancellationToken)
+        protected override async UniTask InitializeDetailWithUniTask(CancellationToken _cancellationToken)
         {
             await Variable_Null_Handle(_cancellationToken);
             _rigidbody = UnityEngine.Object.Instantiate(_rigidbody, new Vector3(0f, 0f, -2.5f), Quaternion.identity);
@@ -55,10 +55,10 @@ namespace Logy.Unity_Common_v01
 
             _move_model.Initialize();
 
-            await _move_variable_viewer.Initialize_With_UniTask(_cancellationToken);
+            await _move_variable_viewer.InitializeWithUniTask(_cancellationToken);
         }
 
-        protected override void Tick_Detail()
+        protected override void TickDetail()
         {
             _move_model.Tick();
 

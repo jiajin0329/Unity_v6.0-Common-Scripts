@@ -1,7 +1,7 @@
 #if UNITY_EDITOR
 using Cysharp.Threading.Tasks;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     public struct UnitTest01PlayerViewTopDownPresenter
     {
@@ -11,7 +11,7 @@ namespace Logy.Unity_Common_v01
         {
             BuildObject();
 
-            await Process.Check_Initialize_With_UniTask(_viewPresenter);
+            await Process.CheckInitializeWithUniTask(_viewPresenter);
         }
 
         private static void BuildObject()

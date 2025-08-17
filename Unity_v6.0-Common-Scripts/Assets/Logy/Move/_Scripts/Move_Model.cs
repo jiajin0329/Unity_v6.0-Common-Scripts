@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Logy.Unity_Common_v01
+namespace Logy.UnityCommonV01
 {
     [Serializable]
     public class Move_Model : IMove_Model
@@ -44,7 +44,7 @@ namespace Logy.Unity_Common_v01
             velocity = Vector2.ClampMagnitude(velocity, speed);
 
             speed_ratio = velocity.magnitude / speed;
-            move_radian = Convert.Vector2_To_Radian(velocity);
+            move_radian = Convert.Vector2ToRadian(velocity);
         }
 
         private bool Is_Input()
