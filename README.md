@@ -1,5 +1,7 @@
 version : Unity.v6.0.53f1
 ## Practice Goals
+Practice Clean Code.
+
 Follow the Model-View-Presenter framework to achieve modular programming.
 
 Use Test Runner for Unti Testing.
@@ -16,7 +18,7 @@ Use Tilemap and Rule Tiles.
 
 Scene Path : Assets\Logy\_Case\Input_Generic_TopDown\Assets\HD-2D-Test
 
-https://github.com/user-attachments/assets/6c8a5471-4800-48e8-bcde-14f17489568c
+https://github.com/user-attachments/assets/4d83e4c2-c1c9-42c4-974b-accba9fcab2e
 
 ### Source
 [Pixel Art Top Down - Basic](https://assetstore.unity.com/packages/2d/environments/pixel-art-top-down-basic-187605)
