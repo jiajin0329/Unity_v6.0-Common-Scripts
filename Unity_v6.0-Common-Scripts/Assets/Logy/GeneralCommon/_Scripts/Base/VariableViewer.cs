@@ -57,7 +57,7 @@ namespace Logy.UnityCommonV01
 
         private async UniTask<TextMeshProUGUI> InstantiateVariableViewerUI(CancellationToken _cancellationToken)
         {
-            GameObject _prefab = await UniTaskEX.Addressables_LoadAssetAsync<GameObject>("Variable Viewer UI", _cancellationToken);
+            GameObject _prefab = await UniTaskEX.AddressablesLoadAssetAsync<GameObject>("Variable Viewer UI", _cancellationToken);
 
             return Object.Instantiate(_prefab).transform.Find("Viewport/Content").GetChild(0).GetComponent<TextMeshProUGUI>();
         }
