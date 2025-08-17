@@ -240,6 +240,7 @@ MonoBehaviour:
       <player_view>k__BackingField:
         _animator: {fileID: 7903729523801939823, guid: 269be35adf2b3e147b0cb8ba346bd744, type: 3}
     _cinemachineCamera: {fileID: 0}
+    _ambientGlowsFx: {fileID: 4418750699996585896, guid: 04975437cd1c6c1449b0a7719714a5cd, type: 3}
 --- !u!1 &5319500571916398917
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3077369785099802996, guid: 0311b3009fcd86e46ae5629246dc5488, type: 3}
       propertyPath: m_Size
-      value: 0.44591346
+      value: 0.5061416
       objectReference: {fileID: 0}
     - target: {fileID: 3077369785099802996, guid: 0311b3009fcd86e46ae5629246dc5488, type: 3}
       propertyPath: m_Value

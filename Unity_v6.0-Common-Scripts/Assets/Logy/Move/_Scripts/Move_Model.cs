@@ -10,7 +10,7 @@ namespace Logy.Unity_Common_v01
         public const float speed = 2.5f;
         private const float _acceleration = 15f;
         private const float _slowDown = 7.5f;
-        private IInput_Model _input_model;
+        public IInput_Model inputModel { get; private set; }
         [field: SerializeField]
         public Vector2 velocity { get; private set; }
         [field: SerializeField]
@@ -20,7 +20,7 @@ namespace Logy.Unity_Common_v01
 
         public event UnityAction Tick_Action;
 
-        public void Set_Reference(IInput_Model _input_model) { this._input_model = _input_model; }
+        public void Set_Reference(IInput_Model _input_model) { this.inputModel = _input_model; }
 
         public void Initialize()
         {
@@ -49,12 +49,12 @@ namespace Logy.Unity_Common_v01
 
         private bool Is_Input()
         {
-            return _input_model.input_distance > 0.2f;
+            return inputModel.input_distance > 0.2f;
         }
 
         private void Calculate_Acceleration()
         {
-            Vector2 _desired_velocity = _input_model.input_vector2 * speed;
+            Vector2 _desired_velocity = inputModel.input_vector2 * speed;
             Vector2 _steering = _desired_velocity - velocity;
 
             float _acceleration_fixedDeltaTime =  _acceleration * Time.fixedDeltaTime;

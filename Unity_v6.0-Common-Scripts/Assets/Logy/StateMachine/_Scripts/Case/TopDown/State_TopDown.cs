@@ -28,14 +28,21 @@ namespace Logy.Unity_Common_v01
 
         public void Switch_Direction()
         {
-            if (_stateMachine.direction is StateMachine_TopDown.Direction.right)
-                OnRight_Action?.Invoke();
-            else if (_stateMachine.direction is StateMachine_TopDown.Direction.left)
-                OnLeft_Action?.Invoke();
-            else if (_stateMachine.direction is StateMachine_TopDown.Direction.up)
-                OnUp_Action?.Invoke();
-            else
-                OnDown_Action?.Invoke();
+            switch (_stateMachine.direction)
+            {
+                case StateMachine_TopDown.Direction.down:
+                    OnDown_Action?.Invoke();
+                    break;
+                case StateMachine_TopDown.Direction.left:
+                    OnLeft_Action?.Invoke();
+                    break;
+                case StateMachine_TopDown.Direction.right:
+                    OnRight_Action?.Invoke();
+                    break;
+                case StateMachine_TopDown.Direction.up:
+                    OnUp_Action?.Invoke();
+                    break;
+            }
         }
     }
 }

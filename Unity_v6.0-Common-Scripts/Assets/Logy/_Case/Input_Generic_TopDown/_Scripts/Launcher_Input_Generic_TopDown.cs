@@ -29,8 +29,11 @@ namespace Logy.Unity_Common_v01
         private Player_View_TopDown_Presenter _player_view_presenter = new();
         [SerializeField]
         private CinemachineCamera _cinemachineCamera;
+        [SerializeField]
+        private ParticleSystem _ambientGlowsFx;
+        
 
-        public Module_Input_Generic_TopDown() : base(nameof(Module_Input_Generic_TopDown)) {}
+        public Module_Input_Generic_TopDown() : base(nameof(Module_Input_Generic_TopDown)) { }
 
         public override async UniTask Variable_Null_Handle(CancellationToken _cancellationToken)
         {
@@ -47,6 +50,8 @@ namespace Logy.Unity_Common_v01
             await _plyaer_stateMachine_Initialize_With_UniTask(_cancellationToken);
             await _player_view_topDown_Initialize_With_UniTask(_cancellationToken);
             _cinemachineCamera.Follow = _rigidbody_move.transform;
+
+            UnityEngine.Object.Instantiate(_ambientGlowsFx, _rigidbody_move.transform);
         }
 
         private async UniTask _rigidbody_move_Initialize(CancellationToken _cancellationToken)

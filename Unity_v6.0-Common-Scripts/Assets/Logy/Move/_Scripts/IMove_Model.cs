@@ -8,6 +8,7 @@ namespace Logy.Unity_Common_v01
         public Vector2 velocity { get; }
         public float speed_ratio { get; }
         public float move_radian { get; }
+        public IInput_Model inputModel { get; }
 
         public event UnityAction Tick_Action;
     }
