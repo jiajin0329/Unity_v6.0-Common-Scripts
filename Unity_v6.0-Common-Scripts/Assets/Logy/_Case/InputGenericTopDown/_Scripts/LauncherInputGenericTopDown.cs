@@ -20,7 +20,7 @@ namespace Logy.UnityCommonV01
     public class ModuleInputGenericTopDown : Module, IHasInitializeWithUniTask, IHasTick
     {
         [SerializeField]
-        private Player_Input_Generic_Presenter _playerInput = new();
+        private PlayerInputGenericPresenter _playerInput = new();
         [SerializeField]
         private Rigidbody_Move _rigidbodyMove = new();
         [SerializeField]
@@ -39,7 +39,7 @@ namespace Logy.UnityCommonV01
 
         public override async UniTask VariableNullHandle(CancellationToken _cancellationToken)
         {
-            await _playerInput.Variable_Null_Handle(_cancellationToken);
+            await _playerInput.VariableNullHandle(_cancellationToken);
             await _playerStateMachine.Variable_Null_Handle(_cancellationToken);
             await _rigidbodyMove.Variable_Null_Handle(_cancellationToken);
             await _playerView.VariableNullHandle(_cancellationToken);
@@ -58,7 +58,7 @@ namespace Logy.UnityCommonV01
 
         private async UniTask RigidbodyMoveInitialize(CancellationToken _cancellationToken)
         {
-            _rigidbodyMove.Set_Reference(_playerInput.model.input_model);
+            _rigidbodyMove.Set_Reference(_playerInput.model.inputModel);
             await _rigidbodyMove.InitializeWithUniTask(_cancellationToken);
         }
 
@@ -90,7 +90,7 @@ namespace Logy.UnityCommonV01
         public override void Cancel()
         {
             //The project has disabled Reload Domain, so Listeners need to be manually removed.
-            _playerInput.model.controller.Remove_All_inputAction_Listener();
+            _playerInput.model.controller.RemoveAllInputActionListener();
         }
     }
 }

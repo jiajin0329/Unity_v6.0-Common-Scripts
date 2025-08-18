@@ -18,7 +18,7 @@ namespace Logy.UnityCommonV01
         {
             _rigidbody_move = new();
 
-            _rigidbody_move.Set_Reference(_02_Input_Model_UnitTest.model);
+            _rigidbody_move.Set_Reference(UnitTest02InputModel.model);
         }
     }
 }

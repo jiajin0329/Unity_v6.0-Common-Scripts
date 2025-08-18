@@ -16,7 +16,7 @@ namespace Logy.UnityCommonV01
         private static void Build_Object()
         {
             model = new();
-            model.Set_Reference(_02_Input_Model_UnitTest.model);
+            model.Set_Reference(UnitTest02InputModel.model);
         }
     }
 }

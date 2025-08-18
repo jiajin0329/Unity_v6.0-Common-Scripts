@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: 62f42f63132f5794ca8fc68f771ae621
   m_SerializeEntries:
   - m_GUID: 0311b3009fcd86e46ae5629246dc5488
-    m_Address: Variable Viewer UI
+    m_Address: Variable-Viewer-UI
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5536a191df3e3b04aa33d0c6c5bee9f6
-    m_Address: InputSystem Actions
+    m_Address: InputSystem-Actions
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 98193ebe049082d4c95afde5be1af044
-    m_Address: Launcher Input Generic TopDown
+    m_Address: Launcher-Input-Generic-TopDown
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: efa613518dd0adf4fbee9f07c9a34fd9
-    m_Address: VirtualJoystick View UI
+    m_Address: VirtualJoystick-View-UI
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

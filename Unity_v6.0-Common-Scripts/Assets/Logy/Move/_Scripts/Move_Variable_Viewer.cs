@@ -20,7 +20,7 @@ namespace Logy.UnityCommonV01
         private Data _data;
         public struct Data
         {
-            public IInput_Model input_model;
+            public IInputModel input_model;
             public IMove_Model move_model;
         }
 
@@ -64,7 +64,7 @@ namespace Logy.UnityCommonV01
             _speed_ratio_variable_ui.UpdateText(_data.move_model.speed_ratio.ToString());
             _move_radian_variable_ui.UpdateText(_data.move_model.move_radian.ToString());
 
-            _input_vector2_point.anchoredPosition = _data.input_model.input_vector2 * _image_radius;
+            _input_vector2_point.anchoredPosition = _data.input_model.inputVector2 * _image_radius;
             _move_vector2_point.anchoredPosition = _data.move_model.velocity * _image_radius / Move_Model.speed;
         }
     }

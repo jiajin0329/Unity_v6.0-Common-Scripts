@@ -26,60 +26,60 @@ namespace Logy.UnityCommonV01
         {
             switch (_fxType)
             {
-                case AnimationFxEvent.FxType.footStepDown:
-                    StepDown();
+                case AnimationFxEvent.FxType.footStepRight:
+                    FootStepRight();
                     return true;
                 case AnimationFxEvent.FxType.footStepLeft:
-                    StepLeft();
-                    return true;
-                case AnimationFxEvent.FxType.footStepRight:
-                    StepRight();
+                    FootStepLeft();
                     return true;
                 case AnimationFxEvent.FxType.footStepUp:
-                    StepUp();
+                    FootStepUp();
+                    return true;
+                case AnimationFxEvent.FxType.footStepDown:
+                    FootStepDown();
                     return true;
                 default:
                     return false;
             }
         }
 
-        private void StepRight()
+        private void FootStepRight()
         {
             if (!_canfootStepFxPlay) return;
 
             footStepVfxRight.Play();
             footStepSfx.Play();
-            StepFxCooldown();
+            FootStepFxCooldown();
         }
 
-        private void StepLeft()
+        private void FootStepLeft()
         {
             if (!_canfootStepFxPlay) return;
 
             footStepVfxLeft.Play();
             footStepSfx.Play();
-            StepFxCooldown();
+            FootStepFxCooldown();
         }
 
-        private void StepUp()
+        private void FootStepUp()
         {
             if (!_canfootStepFxPlay) return;
 
             footStepVfxUp.Play();
             footStepSfx.Play();
-            StepFxCooldown();
+            FootStepFxCooldown();
         }
 
-        private void StepDown()
+        private void FootStepDown()
         {
             if (!_canfootStepFxPlay) return;
 
             footStepVfxDown.Play();
             footStepSfx.Play();
-            StepFxCooldown();
+            FootStepFxCooldown();
         }
 
-        private async void StepFxCooldown()
+        private async void FootStepFxCooldown()
         {
             if (!_canfootStepFxPlay) return;
 

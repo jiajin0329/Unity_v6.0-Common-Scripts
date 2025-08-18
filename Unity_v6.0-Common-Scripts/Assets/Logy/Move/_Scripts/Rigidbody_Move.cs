@@ -22,7 +22,7 @@ namespace Logy.UnityCommonV01
 
         public Rigidbody_Move() : base(nameof(Rigidbody_Move)) {}
 
-        public void Set_Reference(IInput_Model input_model)
+        public void Set_Reference(IInputModel input_model)
         {
             _move_model.Set_Reference(input_model);
 

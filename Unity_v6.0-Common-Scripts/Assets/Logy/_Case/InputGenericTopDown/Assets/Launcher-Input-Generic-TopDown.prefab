@@ -175,22 +175,21 @@ MonoBehaviour:
     _playerInput:
       <processState>k__BackingField: 0
       _model:
-        _controller_inputAction_generic:
+        _controllerInputActionGeneric:
           _inputActionAsset: {fileID: -944628639613478452, guid: 5536a191df3e3b04aa33d0c6c5bee9f6, type: 3}
-          <input_type>k__BackingField: 0
-        _input_model:
+          <inputType>k__BackingField: 0
+        _inputModel:
           <inputDown>k__BackingField: 0
           <input>k__BackingField: 0
           <inputUp>k__BackingField: 0
-          <input_vector2>k__BackingField: {x: 0, y: 0}
-          <input_distance>k__BackingField: 0
-          <input_radian>k__BackingField: 0
-        _touch_input_model:
-          <start_touch_vector2>k__BackingField: {x: 0, y: 0}
-          <touch_vector2>k__BackingField: {x: 0, y: 0}
-      <virtualJoystick_view>k__BackingField:
-        _root_ui: {fileID: 2315728251422970466}
-      <variable_viewer>k__BackingField:
+          <inputVector2>k__BackingField: {x: 0, y: 0}
+          <inputRadian>k__BackingField: 0
+        _touchInputModel:
+          <startTouchVector2>k__BackingField: {x: 0, y: 0}
+          <touchVector2>k__BackingField: {x: 0, y: 0}
+      <virtualJoystickView>k__BackingField:
+        _rootUi: {fileID: 2315728251422970466}
+      <variableViewer>k__BackingField:
         _variableText: {fileID: 5413429398007660917}
     _rigidbodyMove:
       <processState>k__BackingField: 0
@@ -432,7 +431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7486919224439324551, guid: efa613518dd0adf4fbee9f07c9a34fd9, type: 3}
       propertyPath: m_Name
-      value: VirtualJoystick_View_UI
+      value: VirtualJoystick-View-UI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
