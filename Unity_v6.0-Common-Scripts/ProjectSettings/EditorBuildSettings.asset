@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Bug Pixel Art/HD-2D-Test-Bug-Pixel-Art.unity
+    path: Assets/Bug-Pixel-Art/HD-2D-Test-Bug-Pixel-Art.unity
     guid: 1f49002c434095d45b405ed1858d95d0
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 60edd5fe75a557d49a247e73608c0364, type: 2}
