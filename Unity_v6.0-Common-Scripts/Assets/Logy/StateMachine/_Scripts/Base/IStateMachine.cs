@@ -5,8 +5,8 @@ namespace Logy.UnityCommonV01
     public interface IStateMachine
     {
 #if DEBUG
-        public string current_state_name { get; }
+        public string currentStateName { get; }
 #endif
-        public event UnityAction Tick_Action;
+        public event UnityAction TickAction;
     }
 }

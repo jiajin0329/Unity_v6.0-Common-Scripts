@@ -7,31 +7,31 @@ namespace Logy.UnityCommonV01
     [Serializable]
     public class StateMachine : IStateMachine
     {
-        protected byte _current_state_index;
+        protected byte _currentStateIndex;
         private State[] _states;
 #if DEBUG
         [field: SerializeField]
-        public string current_state_name { get; private set; }
+        public string currentStateName { get; private set; }
         [SerializeField]
-        private string[] show_all_state_name;
+        private string[] showAllStateName;
 #endif
 
-        public event UnityAction Tick_Action;
+        public event UnityAction TickAction;
 
-        public void Set_states(State[] _set) { _states = _set; } 
+        public void SetStates(State[] _set) { _states = _set; } 
 
         public virtual void Initialize()
         {
-            Initialize_State();
+            InitializeState();
 
 #if DEBUG
-            Initialize_current_state_name();
+            InitializeCurrentStateName();
 
-            Initialize_state_names();
+            InitializeStateNames();
 #endif
         }
 
-        private void Initialize_State()
+        private void InitializeState()
         {
             if (_states is null) return;
 
@@ -43,63 +43,63 @@ namespace Logy.UnityCommonV01
         }
 
 #if DEBUG
-        private void Initialize_current_state_name()
+        private void InitializeCurrentStateName()
         {
             if (_states is null) return;
 
-            Update_current_state_name();
+            UpdateCurrentStateName();
         }
 
-        private void Update_current_state_name()
+        private void UpdateCurrentStateName()
         {
-            current_state_name = _states[_current_state_index].name;
+            currentStateName = _states[_currentStateIndex].name;
         }
         
-        private void Initialize_state_names()
+        private void InitializeStateNames()
         {
             if (_states is null) return;
 
-            show_all_state_name = new string[_states.Length];
+            showAllStateName = new string[_states.Length];
 
-            for (byte i = 0; i < show_all_state_name.Length; i++)
+            for (byte i = 0; i < showAllStateName.Length; i++)
             {
-                show_all_state_name[i] = _states[i].name;
+                showAllStateName[i] = _states[i].name;
             }
         }
 #endif
 
         public void Tick()
         {
-            byte _next_state_index = _states[_current_state_index].Get_Next_State_Index();
+            byte _nextStateIndex = _states[_currentStateIndex].GetNextStateIndex();
 
-            if (_next_state_index != _current_state_index)
+            if (_nextStateIndex != _currentStateIndex)
             {
-                _states[_current_state_index].OnExit();
-                _current_state_index = _next_state_index;
-                _states[_current_state_index].OnEnter();
+                _states[_currentStateIndex].OnExit();
+                _currentStateIndex = _nextStateIndex;
+                _states[_currentStateIndex].OnEnter();
             }
 
-            _states[_current_state_index].OnTick();
-            Tick_Action?.Invoke();
+            _states[_currentStateIndex].OnTick();
+            TickAction?.Invoke();
 
 #if DEBUG
-            Update_current_state_name();
+            UpdateCurrentStateName();
 #endif
         }
 
-        public void Add_All_State_Start_Action(UnityAction _unityAction)
+        public void AddAllStateStartAction(UnityAction _unityAction)
         {
             for (byte i = 0; i < _states.Length; i++)
             {
-                _states[i].OnEnter_Action += _unityAction;
+                _states[i].OnEnterAction += _unityAction;
             }
         }
 
-        public void Add_All_State_Update_Action(UnityAction _unityAction)
+        public void AddAllStateUpdateAction(UnityAction _unityAction)
         {
             for (byte i = 0; i < _states.Length; i++)
             {
-                _states[i].Tick_Action += _unityAction;
+                _states[i].TickAction += _unityAction;
             }
         }
     }

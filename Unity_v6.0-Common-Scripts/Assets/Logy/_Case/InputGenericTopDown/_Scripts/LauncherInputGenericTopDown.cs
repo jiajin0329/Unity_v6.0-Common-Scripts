@@ -24,7 +24,7 @@ namespace Logy.UnityCommonV01
         [SerializeField]
         private RigidbodyMove _rigidbodyMove = new();
         [SerializeField]
-        private Player_StateMachine_TopDown_Presenter _playerStateMachine = new();
+        private PlayerStateMachineTopDownPresenter _playerStateMachine = new();
         [SerializeField]
         private PlayerViewTopDownPresenter _playerView = new();
         [SerializeField]
@@ -40,7 +40,7 @@ namespace Logy.UnityCommonV01
         public override async UniTask VariableNullHandle(CancellationToken _cancellationToken)
         {
             await _playerInput.VariableNullHandle(_cancellationToken);
-            await _playerStateMachine.Variable_Null_Handle(_cancellationToken);
+            await _playerStateMachine.VariableNullHandle(_cancellationToken);
             await _rigidbodyMove.VariableNullHandle(_cancellationToken);
             await _playerView.VariableNullHandle(_cancellationToken);
         }
@@ -64,7 +64,7 @@ namespace Logy.UnityCommonV01
 
         private async UniTask PlyaerStateMachineInitializeWithUniTask(CancellationToken _cancellationToken)
         {
-            _playerStateMachine.Set_Reference(_rigidbodyMove.moveModel);
+            _playerStateMachine.SetReference(_rigidbodyMove.moveModel);
             await _playerStateMachine.InitializeWithUniTask(_cancellationToken);
         }
 

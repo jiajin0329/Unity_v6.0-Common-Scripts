@@ -9,36 +9,36 @@ namespace Logy.UnityCommonV01
     {
         [field: SerializeField] public string name { get; private set; }
 
-        public event UnityAction OnEnter_Action;
-        public event UnityAction Tick_Action;
-        public event UnityAction OnExit_Action;
+        public event UnityAction OnEnterAction;
+        public event UnityAction TickAction;
+        public event UnityAction OnExitAction;
 
         public State(string _name) { name = _name; }
 
         public virtual void Initialize()
         {
-            OnEnter_Action = null;
-            Tick_Action = null;
-            OnExit_Action = null;
+            OnEnterAction = null;
+            TickAction = null;
+            OnExitAction = null;
 
 #if UNITY_EDITOR
-            Add_Action_Log();
+            AddActionLog();
 #endif
         }
 
 #if UNITY_EDITOR
-        private void Add_Action_Log()
+        private void AddActionLog()
         {
-            OnEnter_Action += () => Debug.Log($"{name} {nameof(OnEnter_Action)}");
-            Tick_Action += () => Debug.Log($"{name} {nameof(Tick_Action)}");
-            OnExit_Action += () => Debug.Log($"{name} {nameof(OnExit_Action)}");
+            OnEnterAction += () => Debug.Log($"{name} {nameof(OnEnterAction)}");
+            TickAction += () => Debug.Log($"{name} {nameof(TickAction)}");
+            OnExitAction += () => Debug.Log($"{name} {nameof(OnExitAction)}");
         }
 #endif
 
-        public abstract byte Get_Next_State_Index();
+        public abstract byte GetNextStateIndex();
 
-        public void OnEnter() { OnEnter_Action?.Invoke(); }
-        public void OnTick() { Tick_Action?.Invoke(); }
-        public void OnExit() { OnExit_Action?.Invoke(); }
+        public void OnEnter() { OnEnterAction?.Invoke(); }
+        public void OnTick() { TickAction?.Invoke(); }
+        public void OnExit() { OnExitAction?.Invoke(); }
     }
 }

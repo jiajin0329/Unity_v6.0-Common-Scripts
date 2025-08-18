@@ -21,7 +21,7 @@ namespace Logy.UnityCommonV01
             PlayerViewTopDownPresenter.Data _data = new()
             {
                 moveModel = UnitTest02MoveModel.model,
-                stateMachine = _02_StateMachine_TopDown_UnitTest.stateMachine,
+                stateMachine = UnitTest02StateMachineTopDown.stateMachine,
             };
 
             _viewPresenter.SetReference(_data);

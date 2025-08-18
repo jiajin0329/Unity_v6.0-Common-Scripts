@@ -12,13 +12,13 @@ namespace Logy.UnityCommonV01
         private Animator _animator;
         protected virtual string _prefabName { get; } = "hero";
         private Data _data;
-        public CharacterViewTopDown[] views = new CharacterViewTopDown[StateMachine_TopDown.Index.amount]
+        public CharacterViewTopDown[] views = new CharacterViewTopDown[StateMachineTopDown.Index.amount]
         {
             new(),
             new()
         };
-        public CharacterViewTopDown idleView => views[StateMachine_TopDown.Index.idle];
-        public CharacterViewTopDown walkView => views[StateMachine_TopDown.Index.walk];
+        public CharacterViewTopDown idleView => views[StateMachineTopDown.Index.idle];
+        public CharacterViewTopDown walkView => views[StateMachineTopDown.Index.walk];
 
         public bool isAnimatorNotNull => _animator != null;
 

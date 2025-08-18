@@ -194,20 +194,20 @@ MonoBehaviour:
     _rigidbodyMove:
       <processState>k__BackingField: 0
       _rigidbody: {fileID: 2381057169764958253, guid: 5a124856b4f473b4aab578e454314167, type: 3}
-      _move_model:
+      _moveModel:
         <velocity>k__BackingField: {x: 0, y: 0}
-        <speed_ratio>k__BackingField: 0
-        <move_radian>k__BackingField: 0
-      _move_variable_viewer:
+        <speedRatio>k__BackingField: 0
+        <moveRadian>k__BackingField: 0
+      _moveVariableViewer:
         _variableText: {fileID: 5413429398007660917}
-        _move_image_ui_prefab: {fileID: 243116980161849398, guid: bb4bcc8bdffb5f54b9c94bb9dd6ade4b, type: 3}
+        _moveImageUiPrefab: {fileID: 243116980161849398, guid: bb4bcc8bdffb5f54b9c94bb9dd6ade4b, type: 3}
     _playerStateMachine:
       <processState>k__BackingField: 0
       _stateMachine:
-        <current_state_name>k__BackingField: 
-        show_all_state_name: []
+        <currentStateName>k__BackingField: 
+        showAllStateName: []
         <direction>k__BackingField: 0
-      _variable_viewer:
+      _variableViewer:
         _variableText: {fileID: 5413429398007660917}
     _playerView:
       <processState>k__BackingField: 0

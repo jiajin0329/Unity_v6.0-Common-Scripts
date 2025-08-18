@@ -15,7 +15,7 @@ namespace Logy.UnityCommonV01
         {
             public Transform parent;
             public IMoveModel moveModel;
-            public IStateMachine_TopDown stateMachine;
+            public IStateMachineTopDown stateMachine;
         }
 
         public PlayerViewTopDownPresenter() : base(nameof(PlayerViewTopDownPresenter)) {}
@@ -55,10 +55,10 @@ namespace Logy.UnityCommonV01
         {
             for (byte i = 0; i < playerView.views.Length; i++)
             {
-                _data.stateMachine.sates[i].OnDown_Action += playerView.views[i].DownView;
-                _data.stateMachine.sates[i].OnLeft_Action += playerView.views[i].LeftView;
-                _data.stateMachine.sates[i].OnRight_Action += playerView.views[i].RightView;
-                _data.stateMachine.sates[i].OnUp_Action += playerView.views[i].UpView;
+                _data.stateMachine.sates[i].OnDownAction += playerView.views[i].DownView;
+                _data.stateMachine.sates[i].OnLeftAction += playerView.views[i].LeftView;
+                _data.stateMachine.sates[i].OnRightAction += playerView.views[i].RightView;
+                _data.stateMachine.sates[i].OnUpAction += playerView.views[i].UpView;
             }
         }
     }
