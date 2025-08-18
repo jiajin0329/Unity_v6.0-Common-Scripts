@@ -14,7 +14,7 @@ namespace Logy.UnityCommonV01
         public struct Data
         {
             public Transform parent;
-            public IMove_Model moveModel;
+            public IMoveModel moveModel;
             public IStateMachine_TopDown stateMachine;
         }
 
@@ -46,7 +46,7 @@ namespace Logy.UnityCommonV01
 
         private void AddViewListener()
         {
-            _data.moveModel.Tick_Action += playerView.Tikc;
+            _data.moveModel.TickAction += playerView.Tikc;
 
             AddStateMachineListener();
         }

@@ -26,7 +26,7 @@ namespace Logy.UnityCommonV01
             await UniTask.CompletedTask;
         }
 
-        public void Set_Reference(IMove_Model _move_model)
+        public void Set_Reference(IMoveModel _move_model)
         {
             _stateMachine.Set_Reference(_move_model);
 

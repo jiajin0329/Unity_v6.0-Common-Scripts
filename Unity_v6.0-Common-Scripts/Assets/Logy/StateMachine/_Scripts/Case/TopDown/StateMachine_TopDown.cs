@@ -8,7 +8,7 @@ namespace Logy.UnityCommonV01
     {
         private State_TopDown[] _states;
         public IState_TopDown[] sates => _states;
-        private IMove_Model _move_model;
+        private IMoveModel _move_model;
         public bool is_move => _move_model.velocity.magnitude > 0f;
         [field: SerializeField]
         public Direction direction { get; private set; }
@@ -40,7 +40,7 @@ namespace Logy.UnityCommonV01
             base.Set_states(_set);
         }
 
-        public void Set_Reference(IMove_Model _move_model) { this._move_model = _move_model; }
+        public void Set_Reference(IMoveModel _move_model) { this._move_model = _move_model; }
 
         public override void Initialize()
         {
@@ -54,11 +54,11 @@ namespace Logy.UnityCommonV01
             if (!is_move) return;
 
             Direction _tempDirection;
-            if (Is.Radian.Right(_move_model.move_radian))
+            if (Is.Radian.Right(_move_model.moveRadian))
                 _tempDirection = Direction.right;
-            else if (Is.Radian.Left(_move_model.move_radian))
+            else if (Is.Radian.Left(_move_model.moveRadian))
                 _tempDirection = Direction.left;
-            else if (Is.Radian.Up(_move_model.move_radian))
+            else if (Is.Radian.Up(_move_model.moveRadian))
                 _tempDirection = Direction.up;
             else
                 _tempDirection = Direction.down;

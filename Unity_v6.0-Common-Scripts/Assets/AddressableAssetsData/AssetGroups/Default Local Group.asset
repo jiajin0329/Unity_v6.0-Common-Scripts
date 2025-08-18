@@ -46,7 +46,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bb4bcc8bdffb5f54b9c94bb9dd6ade4b
-    m_Address: Move_Image_UI
+    m_Address: Move-Image-UI
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

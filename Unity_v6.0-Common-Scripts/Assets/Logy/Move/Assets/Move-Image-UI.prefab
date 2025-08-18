@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 8429964645296281632}
   - component: {fileID: 9143832559895307393}
   m_Layer: 5
-  m_Name: input_vector2_point
+  m_Name: input-vector2-point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 380049183395564774}
   - component: {fileID: 4972675348827657822}
   m_Layer: 5
-  m_Name: move_vector2_point
+  m_Name: move-vector2-point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243116980161849398}
   m_Layer: 5
-  m_Name: Move_Image_UI
+  m_Name: Move-Image-UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

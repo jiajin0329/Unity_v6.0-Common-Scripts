@@ -25,7 +25,7 @@ namespace Logy.UnityCommonV01
         public struct Data
         {
             public Transform parent;
-            public IMove_Model move_model;
+            public IMoveModel move_model;
         }
 
         public void SetReference(Data _data) { this._data = _data; }
@@ -128,7 +128,7 @@ namespace Logy.UnityCommonV01
 
         private void UpdateAnimatorSpeed()
         {
-            switch (_data.move_model.speed_ratio)
+            switch (_data.move_model.speedRatio)
             {
                 case > 0.98f:
                     _animator.speed = 1f;
@@ -137,7 +137,7 @@ namespace Logy.UnityCommonV01
                     _animator.speed = 1f;
                     break;
                 default:
-                    _animator.speed = _data.move_model.speed_ratio;
+                    _animator.speed = _data.move_model.speedRatio;
                     break;
             }
         }

@@ -1,10 +1,10 @@
 {
-    "name": "_03_Move_UnitTest_EditMode",
+    "name": "UnitTestEditMode03Move",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Move_UnitTest",
+        "UnitTestMove",
         "UniTask"
     ],
     "includePlatforms": [
