@@ -31,6 +31,8 @@ namespace Logy.UnityCommonV01
         private CinemachineCamera _cinemachineCamera;
         [SerializeField]
         private UI _ui = new();
+        [SerializeField]
+        private FootstepSfx _footstepSfx = new();
         
         public ModuleInputGenericTopDown() : base(nameof(ModuleInputGenericTopDown)) { }
 
@@ -50,6 +52,7 @@ namespace Logy.UnityCommonV01
             await PlayerViewTopDownInitializeWithUniTask(_cancellationToken);
             _cinemachineCamera.Follow = _rigidbodyMove.transform;
             _ui.Initialize();
+            _footstepSfx.Initialize();
         }
 
         private async UniTask PlyaerStateMachineInitializeWithUniTask(CancellationToken _cancellationToken)
@@ -83,10 +86,11 @@ namespace Logy.UnityCommonV01
             _playerStateMachine.Tick();
         }
 
-        public override void Cancel()
+        public override void Destroy()
         {
             //The project has disabled Reload Domain, so Listeners need to be manually removed.
             _playerInput.model.controller.RemoveAllInputActionListener();
+            _footstepSfx.Destory();
         }
     }
 }

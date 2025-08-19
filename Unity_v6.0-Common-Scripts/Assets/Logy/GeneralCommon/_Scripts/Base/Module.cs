@@ -8,6 +8,6 @@ namespace Logy.UnityCommonV01
         public Module(string _name) : base(_name) {}
 
         public abstract UniTask VariableNullHandle(CancellationToken _cancellationToken);
-        public abstract void Cancel();
+        public abstract void Destroy();
     }
 }

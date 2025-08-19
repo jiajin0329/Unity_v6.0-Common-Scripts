@@ -79,14 +79,14 @@ namespace Logy.UnityCommonV01
 
         private void OnDestroy()
         {
-            Cancel();
+            Destroy();
         }
 
-        public void Cancel()
+        public void Destroy()
         {
             cancellationTokenSource?.Cancel();
 
-            _module.Cancel();
+            _module.Destroy();
 
             launcherTransform = null;
         }
