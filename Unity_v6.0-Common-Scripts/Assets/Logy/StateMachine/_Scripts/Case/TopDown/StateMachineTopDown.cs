@@ -46,7 +46,7 @@ namespace Logy.UnityCommonV01
         {
             base.Initialize();
 
-            TickAction += SwitchDirection;
+            AddAllStateTickListener(SwitchDirection);
         }
 
         public void SwitchDirection()

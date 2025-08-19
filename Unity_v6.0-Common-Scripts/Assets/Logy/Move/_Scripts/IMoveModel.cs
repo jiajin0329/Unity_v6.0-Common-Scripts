@@ -10,5 +10,7 @@ namespace Logy.UnityCommonV01
         public float moveRadian { get; }
 
         public event UnityAction TickAction;
+
+        public void Tick();
     }
 }

@@ -20,10 +20,10 @@ namespace Logy.UnityCommonV01
 
             _playerStateMachineVariableUi.Initialize("player current state : ", _variableText);
 
-            _stateMachine.TickAction += UpdatePlayerStateMachineVariable_ui;
+            _stateMachine.AddAllStateOnEnterListener(UpdatePlayerStateMachineVariableUi);
         }
 
-        private void UpdatePlayerStateMachineVariable_ui()
+        private void UpdatePlayerStateMachineVariableUi()
         {
             _playerStateMachineVariableUi.UpdateText(_stateMachine.currentStateName);
         }
