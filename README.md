@@ -18,7 +18,7 @@ Use Tilemap and Rule Tiles.
 
 Scene Path : Assets\Logy\_Case\Input_Generic_TopDown\Assets\HD-2D-Test
 
-https://github.com/user-attachments/assets/4d83e4c2-c1c9-42c4-974b-accba9fcab2e
+https://github.com/user-attachments/assets/6640cbb8-863d-4d6f-af8d-b7e36f2a424c
 
 ### Source
 [Pixel Art Top Down - Basic](https://assetstore.unity.com/packages/2d/environments/pixel-art-top-down-basic-187605)
