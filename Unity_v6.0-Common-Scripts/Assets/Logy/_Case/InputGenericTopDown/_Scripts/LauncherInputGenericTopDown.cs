@@ -32,7 +32,6 @@ namespace Logy.UnityCommonV01
         [SerializeField]
         private UI _ui = new();
         
-
         public ModuleInputGenericTopDown() : base(nameof(ModuleInputGenericTopDown)) { }
 
         public override async UniTask VariableNullHandle(CancellationToken _cancellationToken)
@@ -46,23 +45,24 @@ namespace Logy.UnityCommonV01
         protected override async UniTask InitializeDetailWithUniTask(CancellationToken _cancellationToken)
         {
             await _playerInput.InitializeWithUniTask(_cancellationToken);
-            await RigidbodyMoveInitialize(_cancellationToken);
             await PlyaerStateMachineInitializeWithUniTask(_cancellationToken);
+            await RigidbodyMoveInitialize(_cancellationToken);
             await PlayerViewTopDownInitializeWithUniTask(_cancellationToken);
             _cinemachineCamera.Follow = _rigidbodyMove.transform;
             _ui.Initialize();
-        }
-
-        private async UniTask RigidbodyMoveInitialize(CancellationToken _cancellationToken)
-        {
-            _rigidbodyMove.SetReference(_playerInput.model.inputModel);
-            await _rigidbodyMove.InitializeWithUniTask(_cancellationToken);
         }
 
         private async UniTask PlyaerStateMachineInitializeWithUniTask(CancellationToken _cancellationToken)
         {
             _playerStateMachine.SetReference(_rigidbodyMove.moveModel);
             await _playerStateMachine.InitializeWithUniTask(_cancellationToken);
+        }
+
+        private async UniTask RigidbodyMoveInitialize(CancellationToken _cancellationToken)
+        {
+            _rigidbodyMove.SetReference(_playerInput.model.inputModel);
+            await _rigidbodyMove.InitializeWithUniTask(_cancellationToken);
+            _playerStateMachine.stateMachine.AddAllStateTickListener(_rigidbodyMove.Tick);
         }
 
         private async UniTask PlayerViewTopDownInitializeWithUniTask(CancellationToken _cancellationToken)
@@ -80,7 +80,6 @@ namespace Logy.UnityCommonV01
 
         protected override void TickDetail()
         {
-            _rigidbodyMove.Tick();
             _playerStateMachine.Tick();
         }
 

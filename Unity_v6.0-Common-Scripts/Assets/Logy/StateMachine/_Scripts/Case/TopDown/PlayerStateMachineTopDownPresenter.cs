@@ -29,16 +29,14 @@ namespace Logy.UnityCommonV01
         public void SetReference(IMoveModel _move_model)
         {
             _stateMachine.SetReference(_move_model);
-
 #if DEBUG
             _variableViewer.SetReference(_stateMachine);
-#endif  
+#endif
         }
 
         protected override async UniTask InitializeDetailWithUniTask(CancellationToken _cancellationToken)
         {
             _stateMachine.Initialize();
-
 #if DEBUG
             await _variableViewer.InitializeWithUniTask(_cancellationToken);
 #endif

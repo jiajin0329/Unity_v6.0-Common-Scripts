@@ -16,9 +16,7 @@ namespace Logy.UnityCommonV01
         private string[] showAllStateName;
 #endif
 
-        public event UnityAction TickAction;
-
-        public void SetStates(State[] _set) { _states = _set; } 
+        public void SetStates(State[] _set) { _states = _set; }
 
         public virtual void Initialize()
         {
@@ -54,7 +52,7 @@ namespace Logy.UnityCommonV01
         {
             currentStateName = _states[_currentStateIndex].name;
         }
-        
+
         private void InitializeStateNames()
         {
             if (_states is null) return;
@@ -70,6 +68,8 @@ namespace Logy.UnityCommonV01
 
         public void Tick()
         {
+            _states[_currentStateIndex].OnTick();
+
             byte _nextStateIndex = _states[_currentStateIndex].GetNextStateIndex();
 
             if (_nextStateIndex != _currentStateIndex)
@@ -79,15 +79,28 @@ namespace Logy.UnityCommonV01
                 _states[_currentStateIndex].OnEnter();
             }
 
-            _states[_currentStateIndex].OnTick();
-            TickAction?.Invoke();
-
 #if DEBUG
             UpdateCurrentStateName();
 #endif
         }
 
-        public void AddAllStateStartAction(UnityAction _unityAction)
+        public void AddAllStateTickListener(UnityAction _unityAction)
+        {
+            for (byte i = 0; i < _states.Length; i++)
+            {
+                _states[i].TickAction += _unityAction;
+            }
+        }
+
+        public void RemoveAllStateTickListener(UnityAction _unityAction)
+        {
+            for (byte i = 0; i < _states.Length; i++)
+            {
+                _states[i].TickAction += _unityAction;
+            }
+        }
+
+        public void AddAllStateOnEnterListener(UnityAction _unityAction)
         {
             for (byte i = 0; i < _states.Length; i++)
             {
@@ -95,11 +108,28 @@ namespace Logy.UnityCommonV01
             }
         }
 
-        public void AddAllStateUpdateAction(UnityAction _unityAction)
+        public void RemoveAllStateOnEnterListener(UnityAction _unityAction)
         {
             for (byte i = 0; i < _states.Length; i++)
             {
-                _states[i].TickAction += _unityAction;
+                _states[i].OnEnterAction += _unityAction;
+            }
+        }
+
+        public void AddAllStateOnExitListener(UnityAction _unityAction)
+        {
+            for (byte i = 0; i < _states.Length; i++)
+            {
+                _states[i].OnExitAction += _unityAction;
+            }
+        }
+        
+        
+        public void RemoveAllStateOnExitListener(UnityAction _unityAction)
+        {
+            for (byte i = 0; i < _states.Length; i++)
+            {
+                _states[i].OnExitAction += _unityAction;
             }
         }
     }
