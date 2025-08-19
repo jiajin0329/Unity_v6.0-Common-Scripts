@@ -45,7 +45,7 @@ namespace Logy.UnityCommonV01
 
         private async void AudioSourceFinish(AudioSource _audioSource)
         {
-            await UniTask.Delay((int)(_audioSource.clip.length * 1000));
+            await UniTask.Delay((int)(_audioSource.clip.length * 1000f));
             _pool.Release(_audioSource);
         }
 
@@ -63,6 +63,7 @@ namespace Logy.UnityCommonV01
 
         private void Destory(AudioSource _audioSource)
         {
+            if (_audioSource == null) return;
             UnityEngine.Object.Destroy(_audioSource.gameObject);
         }
 
