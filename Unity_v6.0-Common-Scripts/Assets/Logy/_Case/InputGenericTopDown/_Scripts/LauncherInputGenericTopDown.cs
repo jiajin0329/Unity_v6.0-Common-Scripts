@@ -30,8 +30,6 @@ namespace Logy.UnityCommonV01
         [SerializeField]
         private CinemachineCamera _cinemachineCamera;
         [SerializeField]
-        private ParticleSystem _ambientGlowsFx;
-        [SerializeField]
         private UI _ui = new();
         
 
@@ -52,7 +50,6 @@ namespace Logy.UnityCommonV01
             await PlyaerStateMachineInitializeWithUniTask(_cancellationToken);
             await PlayerViewTopDownInitializeWithUniTask(_cancellationToken);
             _cinemachineCamera.Follow = _rigidbodyMove.transform;
-            UnityEngine.Object.Instantiate(_ambientGlowsFx, _rigidbodyMove.transform);
             _ui.Initialize();
         }
 
