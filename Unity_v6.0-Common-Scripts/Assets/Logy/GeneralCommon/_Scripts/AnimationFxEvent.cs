@@ -6,23 +6,23 @@ namespace Logy.UnityCommonV01
     public class AnimationFxEvent : MonoBehaviour
     {
         [SerializeField]
-        private FootStepFx footStepFx;
+        private FootstepFxs footstepFx;
         public enum FxType
         {
-            footStepDown,
-            footStepLeft,
-            footStepRight,
-            footStepUp
+            footstepDown,
+            footstepLeft,
+            footstepRight,
+            footstepUp
         }
 
         private void Awake()
         {
-            footStepFx.cancellationToken = this.GetCancellationTokenOnDestroy();
+            footstepFx.cancellationToken = this.GetCancellationTokenOnDestroy();
         }
 
         private void Play(FxType _fxType)
         {
-            if (footStepFx.Play(_fxType)) return;
+            if (footstepFx.Play(_fxType)) return;
         }
     }
 }

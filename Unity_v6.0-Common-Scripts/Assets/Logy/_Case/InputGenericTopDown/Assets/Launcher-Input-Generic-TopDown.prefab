@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &378141700841042075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2708894870789167169}
+  m_Layer: 0
+  m_Name: sfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2708894870789167169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378141700841042075}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4646653144899071098}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &492808907009998829
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +183,7 @@ Transform:
   m_Children:
   - {fileID: 9028279446468509621}
   - {fileID: 2891321851295689072}
+  - {fileID: 2708894870789167169}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8162085063293912961
@@ -214,10 +246,12 @@ MonoBehaviour:
       <playerView>k__BackingField:
         _animator: {fileID: 7903729523801939823, guid: 269be35adf2b3e147b0cb8ba346bd744, type: 3}
     _cinemachineCamera: {fileID: 0}
-    _ambientGlowsFx: {fileID: 4418750699996585896, guid: 04975437cd1c6c1449b0a7719714a5cd, type: 3}
     _ui:
       _ui: {fileID: 4371389008129620609}
       _button: {fileID: 3890633071995116814}
+    _footstepSfx:
+      _audioSource: {fileID: 3711146350504637979, guid: 1576c2528cc50b64eaf37079f2276bb6, type: 3}
+      _parent: {fileID: 2708894870789167169}
 --- !u!1 &5319500571916398917
 GameObject:
   m_ObjectHideFlags: 0
